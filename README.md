@@ -1,24 +1,50 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column         | Type   | Options     |
+| ---------------| ------ | ----------- |
+| nickname       | string | null: false |
+| email          | string | null: false |
+| password       | string | null: false |
 
-* Ruby version
+### Association
+- has_many :places
+- has_many :users_places
+- has_many :comments
 
-* System dependencies
+## places テーブル
+| Column              | Type   | Options     |
+| --------------------| ------ | ----------- |
+| image               | string | null: false |
+| name                | string | null: false |
+| address             | string | null: false |
+| main_time           | time | null: false |
+| available_time      | time | null: false |
+| price               | integer | null: false |
 
-* Configuration
+### Association
+- has_many :users
+- has_many :users_places
+- has_many :comments
 
-* Database creation
+## users_places テーブル
+| Column          | Type   | Options     |
+| ----------------| ------ | ----------- |
+| user_id         | integer | null: false, foreign_key: true |
+| place_id         | integer | null: false, foreign_key: true |
 
-* Database initialization
+### Association
+- belongs_to :user
+- belongs_to :place
 
-* How to run the test suite
+## commentsテーブル
+| Column           | Type   | Options     |
+| -----------------| ------ | ----------- |
+| text             | text | null: false |
+| user_id          | integer | null: false, foreign_key: true |
+| place_id         | integer | null: false, foreign_key: true |
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :user
+- belongs_to :place
