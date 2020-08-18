@@ -48,7 +48,7 @@ header-container-contents {
   width: 300px;
 }
 
-ul {
+header-container-contents > ul {
   list-style-type: none;
   margin: 0 auto;
   display: flex;
@@ -58,7 +58,7 @@ ul {
   width: 300px;
 }
 
-li {
+header-container-contents > ul > li {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin: 0px 25px;
   font-weight: bold;
