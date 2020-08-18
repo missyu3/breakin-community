@@ -1,29 +1,51 @@
 function initMap() {
   'use strict';
 
-  var target =document.getElementById('target');
-  var map;
-  var tokyo = {lat: 35.681167,lng: 139.767052};
-  var geocoder = new google.maps.Geocoder();
+  const target =document.getElementById('target');
+  const tokyo = {lat: 35.681167,lng: 139.767052};
+  const geocoder = new google.maps.Geocoder();
 
-  map = new google.maps.Map(target, {
+  const map = new google.maps.Map(target, {
     center: tokyo,
-    zoom: 15
+    zoom: 8,
+    clickableIcons: false
   });
 
-  map.addListener('click', function(e) {
-    var marker = new google.maps.Marker({
-      position: e.latLng,
-      map: this,
-      animation: google.maps.Animation.DROP
+  const markerA = new google.maps.Marker({
+    position: tokyo,
+    map: map,
+    title: 'tokyo'
+  })
+  const about = document.getElementById("about") 
+  const saitama = {lat: 35.831167,lng: 139.667052};
+  const markerB = new google.maps.Marker({
+    position: saitama,
+    map: map,
+    title: about.innerHTML
+  })
+  markerB.addListener('click', function() {
+    const infoWindow = new google.maps.InfoWindow({
+      // content: e.latLng.toString()
+      content: about.innerHTML
     });
-    var infoWindow = new google.maps.InfoWindow({
-      content: e.latLng.toString()
-    });
-    marker.addListener('click', function() {
-      infoWindow.open(map, marker);
-    });
-    });
+      infoWindow.open(map, markerB);
+  })
+
+  // // クリック位置にマーカー表示させ、マーカーをクリックするとウィンドウに緯度経度を表示
+  // map.addListener('click', function(e) {
+  //   var marker = new google.maps.Marker({
+  //     position: e.latLng,
+  //     map: this,
+  //     animation: google.maps.Animation.DROP
+  //   });
+  //   var infoWindow = new google.maps.InfoWindow({
+  //     // content: e.latLng.toString()
+  //     content: about.innerHTML
+  //   });
+  //   marker.addListener('click', function() {
+  //     infoWindow.open(map, marker);
+  //   });
+  //   });
 
   document.getElementById('search').addEventListener('click', function() {
     geocoder.geocode({

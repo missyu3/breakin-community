@@ -33,6 +33,9 @@
       <form>
         <input type="text" id="address">
         <button id="search">Search</button>
+        <div id= about>
+        <%= link_to current_user.nickname, edit_user_path(id: current_user.id), method: :get %>
+        </div>
       </form>
     </main-contents>
   </main>
