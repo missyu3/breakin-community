@@ -15,6 +15,10 @@ class PlacesController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @place = Place.find(params[:id])
+  end
   
   private
   def params_place
