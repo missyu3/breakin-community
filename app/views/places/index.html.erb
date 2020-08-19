@@ -33,10 +33,26 @@
       <form>
         <input type="text" id="address">
         <button id="search">Search</button>
-        <div id= about>
+        <div id= about class= "hidden">
         <%= link_to current_user.nickname, edit_user_path(id: current_user.id), method: :get %>
         </div>
       </form>
+      <div>
+      <%= link_to "新規練習場所を作成する", new_place_path, method: :get%>
+      </div>
+      <% @places.each do |place|%>
+      <div class= "place hidden"><%= place.address%></div>
+      <div class= "name hidden">
+        <%= link_to "#" do%>
+          <%= place.name%></div>
+        <% end %>
+      <% end %>
+      <div class="direction">
+        <div class="sample btn" >北海道方面はこちら</div>
+        <div class="sample btn" onclick="initMap(../javascript/map)">東京方面はこちら</div>
+        <div class="sample btn">大阪方面はこちら</div>
+        <div class="sample btn">九州方面はこちら</div>
+      </div>
     </main-contents>
   </main>
   <footer>

@@ -101,7 +101,29 @@ form {
   width:300px;
 }
 
-#search
+.direction {
+  display:flex;
+  justify-content: space-between;
+  width: 900px;
+}
+
+.btn {
+  width: 150px;
+  background: #3ccace;
+  text-align: center;
+  border-radius: 4%;
+  border:1px solid #fff;
+  bottom: 32px;
+  right: 32px;
+  padding: 15px;
+  margin-bottom:20px;
+}
+
+// #search
+
+.hidden {
+  display:none;
+}
 
 /* footer */
 footer {
