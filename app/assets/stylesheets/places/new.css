@@ -1,0 +1,60 @@
+.place-logo {
+  /* padding: 1vh 0; */
+}
+
+.contents {
+  width:800px;
+  height:600px;
+  margin: 0 auto;
+  background-color:skyblue;
+}
+
+.content {
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  justify-content:center;
+  align-items:center;
+}
+
+.new-name {
+  width:250px;
+  padding-bottom:24px;
+  display:flex;
+  flex-direction:column;
+}
+.new-address {
+  width:250px;
+  padding-bottom:24px;
+  display:flex;
+  flex-direction:column;
+}
+
+.block {
+  /* display:block; */
+}
+
+.time-content {
+  width:350px;
+  padding-bottom:24px;
+  display:flex;
+  /* flex-direction:column; */
+}
+
+.time {
+  display:flex;
+}
+
+.price-content {
+  width:100px;
+  padding-bottom:24px;
+  display:flex;
+  justify-content:space-between;
+  text-align:right;
+}
+
+.price {
+  width:50px;
+  text-align:right;
+  padding-right:10px;
+}
