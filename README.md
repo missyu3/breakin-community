@@ -28,11 +28,11 @@
 - has_many :users_places
 - has_many :comments
 
-## users_places テーブル
+## user_places テーブル
 | Column          | Type   | Options     |
 | ----------------| ------ | ----------- |
-| user_id         | integer | null: false, foreign_key: true |
-| place_id         | integer | null: false, foreign_key: true |
+| user         | references | null: false, foreign_key: true |
+| place         | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
