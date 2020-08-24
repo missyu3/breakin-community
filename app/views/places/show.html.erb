@@ -4,5 +4,7 @@
 <%= @place.available_time%>
 <%= @place.price%>
 
+
 <%= link_to "ここの情報を編集する", edit_place_path, method: :get %>
+<%= link_to "削除する", place_path, method: :delete  %>
 <%= link_to "トップページへ戻る" ,root_path %>

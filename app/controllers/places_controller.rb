@@ -1,4 +1,6 @@
-class PlacesController < ApplicationController
+class PlacesController < ApplicationController 
+  before_action :find_place, only: [:show, :edit, :update, :destroy]
+
   def index
     @places = Place.all
   end
@@ -17,16 +19,13 @@ class PlacesController < ApplicationController
   end
 
   def show
-    @place = Place.find(params[:id])
   end
   
   def edit
-    @place = Place.find(params[:id])
   end
   
   
   def update
-    @place = Place.find(params[:id])
     if @place.update(params_place)
       redirect_to root_path
     else
@@ -34,10 +33,24 @@ class PlacesController < ApplicationController
     end
   end
 
+  def destroy
+    if @place.destroy
+      redirect_to :index
+    else
+      render :show
+    end
+  end
+  
+
 
   private
   def params_place
     params.require(:place).permit(:name, :address, :main_time, :available_time, :price)
   end
+
+  def find_place
+    @place = Place.find(params[:id])
+  end
+  
   
 end
