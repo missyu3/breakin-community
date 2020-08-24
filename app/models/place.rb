@@ -4,4 +4,6 @@ class Place < ApplicationRecord
     validates :address
     validates :price
   end
+  has_many :users, through: :user_places
+  has_many :user_places
 end
