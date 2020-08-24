@@ -78,8 +78,8 @@ function initMap() {
     });
   });
   // たくさんのクラスの情報を取得して配列にしてそこにマーカーを立てる
-  const places = document.getElementsByClassName("place");
-  const names = document.getElementsByClassName("name");
+  const places = document.getElementsByClassName("practicePlace");
+  const names = document.getElementsByClassName("practiceName");
   const placeA = Array.from(places);
   // placeA.forEach(function (place) {
   // });

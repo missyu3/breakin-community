@@ -1,9 +1,29 @@
-<%= form_with model: @place, url: places_path, local: true do |f| %>
-  <%= f.text_area :name, placeholder:"練習場所の名前（必須 40文字まで)", maxlength:"40" %>
-  <%= f.text_area :address, placeholder:"練習場所の住所（必須 40文字まで)", maxlength:"40" %>
-  <%= f.time_select :main_time%>
-  <%= f.time_select :available_time %>
-  <%= f.text_field :price, placeholder:"例）300"  %><span>円</span>
-  <%= f.submit "新しい練習場所を登録する！" %>
-  <%=link_to 'もどる', root_path%>
-<% end %>
+<div class=""></div>
+ <%= render "shared/header" %> 
+<div class="contents">
+  <%= form_with model: @place, url: places_path, local: true do |f| %>
+    <div class="content">
+      <div class="new-name">
+      <span>練習場所の名前</span>
+        <%= f.text_area :name, placeholder:"（必須 40文字まで)", maxlength:"40" %>
+      </div>
+      <div class="new-address">
+      <span>練習場所の住所</span>
+        <%= f.text_area :address, placeholder:"（必須 40文字まで)", maxlength:"40" %>
+      </div>
+      <div class="time-content">
+      <div class="block">よく練習している時間</div>
+        <%= f.time_select :main_time , class:"time" %>
+      <span>練習できる時間</span>
+        <%= f.time_select :available_time , class:"time" %>
+      </div>
+        <div>１時間当たりの金額</div>
+      <div class="price-content">
+        <span class="span">¥</span>
+        <%= f.text_field :price, placeholder:"例）300" ,class:"price" %>
+      </div>
+      <%= f.submit "新しい練習場所を登録する！" %>
+      <%=link_to 'もどる', root_path%>
+    </div>
+  <% end %>
+</div>

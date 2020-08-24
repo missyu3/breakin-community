@@ -1,7 +1,6 @@
   <header>
     <header-contents>
       <header-logo>
-        <img src="logo.png" >
         <div class="header-title">Maro's Footwork</div>
       </header-logo>
       <header-container>
@@ -28,7 +27,8 @@
     </header-contents>
   </header>
   <main>
-    <main-contents>
+    <div class="main-contents">
+      <div class="place">練習場所一覧</div>
       <div id="target"></div>
       <form>
         <input type="text" id="address">
@@ -41,8 +41,8 @@
       <%= link_to "新規練習場所を作成する", new_place_path, method: :get%>
       </div>
       <% @places.each do |place|%>
-      <div class= "place hidden"><%= place.address%></div>
-      <div class= "name hidden">
+      <div class= "practicePlace hidden"><%= place.address%></div>
+      <div class= "practiceName hidden">
         <%= link_to place_path(place.id), method: :get do%>
           <%= place.name%></div>
         <% end %>
@@ -54,7 +54,7 @@
         <div class="sample btn"><span >大阪</span>方面はこちら</div>
         <div class="sample btn"><span class="sample">九州</span>方面はこちら</div>
       </div>
-    </main-contents>
+    </div>
   </main>
   <footer>
     <div class="domain">(c)Maro</div>
