@@ -1,43 +1,10 @@
+ <%= render "shared/header" %> 
+<%= link_to "チャットページへ", new_place_message_path(@place.id), method: :get %>
+<%= link_to "ここの情報を編集する", edit_place_path(@place.id), method: :get %>
+<%= link_to "削除する", place_path, method: :delete  %>
+<%= link_to "トップページへ戻る" ,root_path %>
 <%= @place.name%>
 <%= @place.address%>
 <%= @place.main_time%>
 <%= @place.available_time%>
 <%= @place.price%>
-
-
-<%= link_to "ここの情報を編集する", edit_place_path, method: :get %>
-<%= link_to "削除する", place_path, method: :delete  %>
-<%= link_to "トップページへ戻る" ,root_path %>
-<div class="wrapper">
-  <div class= "side-bar">
-    <div class= "side-header">
-      <div class="user-name">
-        <%= current_user.nickname%>
-      </div>
-      <div class="room-create">
-        チャットに参加する
-      </div>
-    </div>
-    <div class= "rooms">
-        <div class="room">
-        </div>
-    </div>
-  </div>
-
-  <div class = "main-chat">
-    <div class="main-header">
-      <div class="title">
-      </div>
-      <div class="exit">
-      </div>
-    </div>
-    <div class="main-main">
-    </div>
-
-      <div class="messages">
-        <label class="form-image">
-          <span class="image-file">画像</span>
-        </label>
-      </div>
-  </div>
-</div>
