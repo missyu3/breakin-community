@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root "places#index"
   resources :users, only: [:edit,:update]
   resources :places
+  resources :messages, only: [:new, :create]
 end
