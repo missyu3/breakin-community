@@ -14,8 +14,12 @@ ActiveRecord::Schema.define(version: 2020_08_25_030820) do
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text"
+    t.bigint "user_id", null: false
+    t.bigint "place_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["place_id"], name: "index_messages_on_place_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -50,6 +54,8 @@ ActiveRecord::Schema.define(version: 2020_08_25_030820) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "messages", "places"
+  add_foreign_key "messages", "users"
   add_foreign_key "user_places", "places"
   add_foreign_key "user_places", "users"
 end
