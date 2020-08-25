@@ -11,7 +11,7 @@
 ### Association
 - has_many :places
 - has_many :users_places
-- has_many :comments
+- has_many :messages
 
 ## places テーブル
 | Column              | Type   | Options     |
@@ -26,7 +26,7 @@
 ### Association
 - has_many :users
 - has_many :users_places
-- has_many :comments
+- has_many :messages
 
 ## user_places テーブル
 | Column          | Type   | Options     |
@@ -38,7 +38,7 @@
 - belongs_to :user
 - belongs_to :place
 
-## commentsテーブル
+## messagesテーブル
 | Column           | Type   | Options     |
 | -----------------| ------ | ----------- |
 | text             | text | null: false |
