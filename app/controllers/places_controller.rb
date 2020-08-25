@@ -10,7 +10,8 @@ class PlacesController < ApplicationController
   end
 
   def create
-    @place = Place.new(params_place)
+    @user = current_user
+    @place = @user.places.new(params_place)
     if @place.save
       redirect_to root_path
     else
