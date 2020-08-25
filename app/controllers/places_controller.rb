@@ -10,7 +10,8 @@ class PlacesController < ApplicationController
   end
 
   def create
-    @place = Place.new(params_place)
+    @user = current_user
+    @place = @user.places.new(params_place)
     if @place.save
       redirect_to root_path
     else
@@ -45,7 +46,7 @@ class PlacesController < ApplicationController
 
   private
   def params_place
-    params.require(:place).permit(:name, :address, :main_time, :available_time, :price)
+    params.require(:place).permit(:name, :address, :main_time, :available_time, :price, user_ids:[])
   end
 
   def find_place
