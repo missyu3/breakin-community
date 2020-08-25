@@ -46,7 +46,7 @@ class PlacesController < ApplicationController
 
   private
   def params_place
-    params.require(:place).permit(:name, :address, :main_time, :available_time, :price)
+    params.require(:place).permit(:name, :address, :main_time, :available_time, :price, user_ids:[])
   end
 
   def find_place
