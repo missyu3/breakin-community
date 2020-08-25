@@ -1,10 +1,12 @@
 <header>
-    <header-contents>
-      <header-logo>
-        <div class="header-title">Maro's Footwork</div>
-      </header-logo>
-      <header-container>
-        <header-container-contents>
+    <div class="header-contents">
+      <div class="header-logo">
+        <div class="header-title">
+          <%= link_to "Maro's Footwork", root_path, method: :get %>
+        </div>
+      </div>
+      <div class="header-container">
+        <div class="header-container-contents">
           <ul>
             <% if user_signed_in? %>
             <%= link_to current_user.nickname, edit_user_path(id: current_user.id), method: :get %>
@@ -22,7 +24,7 @@
               <li>contact</li>
             </a>
           </ul>          
-        </header-container-contents>
-      </header-container>
-    </header-contents>
-  </header>
+        </div>
+      </div>
+    </div>
+</header>
