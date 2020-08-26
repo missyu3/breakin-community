@@ -1,5 +1,5 @@
 /* main */
-main {
+.main {
   height: 600px;
   /* background-color: rgba(95, 158, 160, 0.39); */
   background-color: hsla(30, 40%, 90%, 1.0);
@@ -26,15 +26,30 @@ main {
 
 #target {
   width: 750px;
-  height: 400px;
+  height: 700px;
 }
 
 form {
+  padding-top:24px;
   display:block;
 }
 
 #address {
   width:300px;
+}
+
+.new-place {
+  font-size:32px;
+  font-weight:bold;
+  padding:0 8px;
+  margin:8px;
+  border-radius: 4%;
+  border:1px solid #fff;
+  background-color:hsla(30, 70%, 70%, 1.0) ;
+}
+
+.new-place > a {
+  color:black;
 }
 
 .direction {

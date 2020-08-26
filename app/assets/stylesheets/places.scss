@@ -45,7 +45,7 @@ header {
 
 .header-container-contents {
   display: inline-block;
-  width: 300px;
+  width: 600px;
 }
 
 .header-container-contents > ul {
@@ -55,18 +55,20 @@ header {
   line-height: 100px;
   /* background-color: beige; */
   padding: 0;
-  width: 300px;
+  width: 500px;
 }
 
-.header-container-contents > ul > li {
+.header-container-contents > ul > a {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin: 0px 25px;
+  margin: 0px 5px;
   font-weight: bold;
-  width: 50px;
+  width: 100px;
+  text-align:center;
 }
 
 a {
   text-decoration: none;
+  color:black;
 }
 
 
