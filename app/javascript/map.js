@@ -80,6 +80,7 @@ function initMap() {
   // たくさんのクラスの情報を取得して配列にしてそこにマーカーを立てる
   const places = document.getElementsByClassName("practicePlace");
   const names = document.getElementsByClassName("practiceName");
+  const chats = document.getElementsByClassName("practiceChat");
   const placeA = Array.from(places);
   // placeA.forEach(function (place) {
   // });
@@ -98,7 +99,7 @@ function initMap() {
               animation: google.maps.Animation.DROP
             });
             const infoWindow = new google.maps.InfoWindow({
-            content: `${names[i].innerHTML}の詳細ページはこちら`
+            content: `${names[i].innerHTML} ${chats[i].innerHTML}`
             });
             marker.addListener('click', function() {
             infoWindow.open(map, marker);
