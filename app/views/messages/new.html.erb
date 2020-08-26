@@ -24,21 +24,39 @@
   <div class = "main-chat">
     <div class="main-header">
       <div class="title">
-          <%= @place.name%>
+        <%= @place.name%>
       </div>
       <div class="exit">
-<%= link_to "ここの情報を編集する", edit_place_path(@place), method: :get %>
-<%= link_to "削除する", place_path(@place), method: :delete  %>
-<%= link_to "トップページへ戻る" ,root_path %>
+        <%= link_to "ここの情報を編集する", edit_place_path(@place), method: :get %>
+        <%= link_to "削除する", place_path(@place), method: :delete  %>
+        <%= link_to "トップページへ戻る" ,root_path %>
       </div>
     </div>
     <div class="main-main">
+      <div id='messages' class="message-contents">
+        <% @messages.reverse_each do |message| %>
+          <div class="message-content">
+            <div class="message-name">
+              <p><%= message.user.nickname %></p>
+            </div>
+            <div class="created-at">
+              <p><%= message.created_at %></p>
+            </div>
+          </div>
+          <div class="lower-message">
+            <div class="text">
+              <p><%= message.text %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
-
-      <div class="messages">
+    <%= form_with model: [@place, @message], html: {class: "form"} do |f| %>
+        <%= f.text_field :text, class: 'message' %>
         <label class="form-image">
           <span class="image-file">画像</span>
         </label>
-      </div>
+        <%= f.submit '送信', class: 'commit' %>
+    <% end %>
   </div>
 </div>
