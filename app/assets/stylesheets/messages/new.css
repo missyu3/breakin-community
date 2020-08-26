@@ -41,9 +41,13 @@
   padding:20px 0 40px;
 }
 
-.room > a {
+.room > p {
   color:white;
   text-decoration:none;
+}
+
+.place-info {
+  padding-bottom:12px;
 }
 
 /* 右 */

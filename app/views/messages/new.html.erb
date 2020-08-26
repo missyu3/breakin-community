@@ -1,4 +1,8 @@
-<%= render "shared/header" %> 
+<%
+=begin%>
+ <%= render "shared/header" %>  
+<%
+=end%>
 <div class="wrapper">
   <div class= "side-bar">
     <div class= "side-header">
@@ -13,10 +17,10 @@
     </div>
     <div class= "rooms">
         <div class="room">
-          <%= @place.address%>
-          <%= @place.price%>
-          <%= @place.main_time%>
-          <%= @place.available_time%>
+          <p>練習場所の住所 :  </p><p class= "place-info"><%= @place.address%></p>
+          <p>１時間当たりの金額 : </p><p class= "place-info"><%= @place.price%>円</p>
+          <p>よく練習している時間 : </p><p class= "place-info"><%= @place.main_time%></p>
+          <p>利用可能時間 : </p><p class= "place-info"><%= @place.available_time%></p>
         </div>
     </div>
   </div>
