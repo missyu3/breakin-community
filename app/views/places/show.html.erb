@@ -3,8 +3,76 @@
 <%= link_to "ここの情報を編集する", edit_place_path(@place.id), method: :get %>
 <%= link_to "削除する", place_path, method: :delete  %>
 <%= link_to "トップページへ戻る" ,root_path %>
-<%= @place.name%>
-<%= @place.address%>
-<%= @place.main_time%>
-<%= @place.available_time%>
-<%= @place.price%>
+<%= %>
+<%= %>
+<%= %>
+<%= %>
+<%= %>
+
+<%
+=begin%>
+ <div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @item.name %>
+    </h2>
+    <div class='item-img-content'>
+      <%= image_tag @item.image ,class:"item-box-img" %>
+      <% if @item.order %>
+        <div class='sold-out'>
+          <span>Sold Out!!</span>
+        </div>
+      <% end %>
+    </div>
+    <div class="item-price-box">
+      <span class="item-price">
+        ¥<%= @item.price %>
+      </span>
+      <span class="item-postage">
+        (税込) 送料込み
+      </span>
+    </div> 
+<%
+=end%>
+
+    <%
+=begin%>
+ <% if user_signed_in? && (current_user.id == @item.user_id ) %>
+      <%= link_to '商品の編集', edit_item_path, method: :get, class: "item-red-btn" %>
+      <p class='or-text'>or</p>
+      <%= link_to '削除', item_path, method: :delete, class:'item-destroy' %>
+    <% else %>
+      <% unless @item.order %>
+        <%= link_to '購入画面に進む', item_transactions_path(@item.id),  class:"item-red-btn"%>
+      <% end %>
+    <% end %> 
+<%
+=end%>
+
+    <div class="item-explain-box">
+      <span><%= "商品説明" %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">出品者</th>
+          <td class="detail-value"><%= @place.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= @place.address %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">商品の状態</th>
+          <td class="detail-value"><%= @place.main_time %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">配送料の負担</th>
+          <td class="detail-value"><%= @place.available_time%></td>
+        </tr>
+        <tr>
+          <th class="detail-item">発送元の地域</th>
+          <td class="detail-value"><%= @place.price %></td>
+        </tr>
+      </tbody>
+    </table>
