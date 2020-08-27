@@ -3,6 +3,8 @@ class MessagesController < ApplicationController
     @message = Message.new
     @place = Place.find(params[:place_id])
     @messages = @place.messages.all
+    @user = User.find_by(id: current_user.id)
+    @user_place = UserPlace.new
   end
 
   def create
@@ -21,5 +23,6 @@ class MessagesController < ApplicationController
   def params_message
     params.require(:message).permit(:text).merge(user_id: current_user.id, place_id: params[:place_id])
   end
+
   
 end

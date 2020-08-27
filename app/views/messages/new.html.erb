@@ -12,7 +12,11 @@
       <% end %>
       </div>
       <div class="room-create">
-        チャットに参加する
+      <%= form_with model: [@user_place, @place], url: user_places_path, method: :post, local: true do |f| %>
+      <input name="user_place[user_id][]" type="hidden" value=<%=current_user.id%>>
+      <input name="user_place[place_id][]" type="hidden" value=<%=@place.id%>>
+        <%= f.submit "チャットに参加する" %>
+      <% end %>
       </div>
     </div>
     <div class= "rooms">
