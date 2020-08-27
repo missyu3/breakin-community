@@ -29,13 +29,30 @@
   height: 400px;
 }
 
-form {
+.search {
   padding-top:24px;
   display:block;
 }
 
 #address {
+  display:inline-block;
   width:300px;
+}
+
+#search {
+  cursor:pointer;
+  display: inline-block;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #fd9535;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
+}
+
+#search:hover {
+  background: #fda555;
 }
 
 .new-place {
