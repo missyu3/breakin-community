@@ -12,11 +12,16 @@
       <% end %>
       </div>
       <div class="room-create">
-      <%= form_with model: [@user_place, @place], url: user_places_path, method: :post, local: true do |f| %>
-      <input name="user_place[user_id][]" type="hidden" value=<%=current_user.id%>>
-      <input name="user_place[place_id][]" type="hidden" value=<%=@place.id%>>
-        <%= f.submit "チャットに参加する" %>
-      <% end %>
+      <%#ユーザーidと練習場所idが共に中間テーブルに存在しないならチャットに参加するを表示%>
+        <% unless @user_places.where(user_id: current_user, place_id: @place.id).exists? %>
+          <%= form_with model: [@user_place, @place], url: user_places_path, method: :post, local: true do |f| %>
+            <input name="user_place[user_id][]" type="hidden" value=<%=current_user.id%>>
+            <input name="user_place[place_id][]" type="hidden" value=<%=@place.id%>>
+            <%= f.submit "チャットに参加する" %>
+          <% end %>
+        <% else %>
+          <p>参加中</p>
+        <% end %>
       </div>
     </div>
     <div class= "rooms">
@@ -25,6 +30,7 @@
           <p>１時間当たりの金額 : </p><p class= "place-info"><%= @place.price%>円</p>
           <p>よく練習している時間 : </p><p class= "place-info"><%= @place.main_time%></p>
           <p>利用可能時間 : </p><p class= "place-info"><%= @place.available_time%></p>
+          <p>このチャットに参加している人数 : </p><p class= "place-info"><%= "#{@user_places.where(place_id: @place.id).count}人"%></p>
         </div>
     </div>
   </div>
@@ -59,12 +65,14 @@
         <% end %>
       </div>
     </div>
-    <%= form_with model: [@place, @message], html: {class: "form"} do |f| %>
-        <%= f.text_field :text, class: 'message' %>
-        <label class="form-image">
-          <span class="image-file">画像</span>
-        </label>
-        <%= f.submit '送信', class: 'commit' %>
+    <% if @user_places.where(user_id: current_user, place_id: @place.id).exists? %>
+      <%= form_with model: [@place, @message], html: {class: "form"} do |f| %>
+          <%= f.text_field :text, class: 'message' %>
+          <label class="form-image">
+            <span class="image-file">画像</span>
+          </label>
+          <%= f.submit '送信', class: 'commit' %>
+      <% end %>
     <% end %>
   </div>
 </div>

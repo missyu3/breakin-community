@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
     @messages = @place.messages.all
     @user = User.find_by(id: current_user.id)
     @user_place = UserPlace.new
+    @user_places = UserPlace.all
   end
 
   def create
