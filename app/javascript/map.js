@@ -85,30 +85,30 @@ function initMap() {
   // placeA.forEach(function (place) {
   // });
   for(let i = 0; i < placeA.length; i++){
-      geocoder.geocode({
-          address: placeA[i].innerHTML 
-        }, function(results, status) {
-          if (status !== 'OK') {
-            alert('Failed: ' + status);
-            return;
-          }
-          if (results[0]) {
-            const marker = new google.maps.Marker({
-              position: results[0].geometry.location,
-              map: map,
-              animation: google.maps.Animation.DROP
-            });
-            const infoWindow = new google.maps.InfoWindow({
-            content: `${names[i].innerHTML} ${chats[i].innerHTML}`
-            });
-            marker.addListener('click', function() {
-            infoWindow.open(map, marker);
-            });
-          } else {
-            alert('No results found');
-            return;
-          }
-      });
+    geocoder.geocode({
+        address: placeA[i].innerHTML 
+      }, function(results, status) {
+        if (status !== 'OK') {
+          alert('Failed: ' + status);
+          return;
+        }
+        if (results[0]) {
+          const marker = new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: map,
+            animation: google.maps.Animation.DROP
+          });
+          const infoWindow = new google.maps.InfoWindow({
+          content: `${names[i].innerHTML} ${chats[i].innerHTML}`
+          });
+          marker.addListener('click', function() {
+          infoWindow.open(map, marker);
+          });
+        } else {
+          alert('No results found');
+          return;
+        }
+    });
   }
 
   // 検索するとそこの住所の地図が描画される
@@ -123,7 +123,7 @@ function initMap() {
       if (results[0]) {
         new google.maps.Map(target, {
           center: results[0].geometry.location,
-          zoom: 13
+          zoom: 9
         })
       } else {
         alert('No results found');
