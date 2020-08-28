@@ -20,7 +20,6 @@ header {
 
 .header-logo {
   width: 400px;
-  padding: 0px 25px;
   box-sizing: border-box;
   display: flex;
 }
@@ -31,15 +30,15 @@ header {
   padding-top: 5px;
 }
 
-.header-title {
-  font-family: 'Bangers', cursive;
-  font-size: 32px;
-  line-height: 100px;
-  width: 300px;
-}
+// .header-title {
+//   font-family: 'Bangers', cursive;
+//   font-size: 32px;
+//   line-height: 100px;
+//   width: 300px;
+// }
 
 .header-title {
-  font-size: 32px;
+  font-size: 40px;
   font-style: italic;
   letter-spacing: .1em;
   text-shadow: -4px 3px 0 #fa4141, -8px 6px 0 #000;
@@ -81,10 +80,9 @@ header {
 
 .header-list > a {
   text-decoration: none;
-  color:black;
+  color:#FFF;
+  font-size:20px;
 }
-
-// #search
 
 .hidden {
   display:none;
@@ -92,7 +90,7 @@ header {
 
 /* footer */
 footer {
-  height: 50px;
+  height: 100px;
   /* background-color: rgba(255, 127, 80, 0.473); */
   background-color: #337079;
 }
@@ -100,5 +98,10 @@ footer {
 .domain {
   height: 50px;
   text-align: center;
-  line-height: 50px;
+  line-height: 100px;
+  font-size: 20px;
+  font-style: italic;
+  letter-spacing: .1em;
+  text-shadow: -4px 3px 0 #fa4141, -8px 6px 0 #000;
+  color:#fff;
 }
