@@ -1,6 +1,6 @@
 <%= render "shared/header" %> 
   <div class="main">
-    <div class="main-contents">
+    <div class="main-contents-left">
       <div class="place">練習場所一覧</div>
       <div id="target"></div>
       <div class= "search">
@@ -33,7 +33,20 @@
         <div class="sample btn"><span class="sample">九州</span>方面はこちら</div>
       </div>
     </div>
+    <div class="main-contents-right">
+      <div class="main-content-right">
+        <div class="explain-title">
+        お気に入りの練習場所を見つけよう
+        </div>
+        <ul>
+          <li class="explain-content">
+          マップ上のマーカーをクリックして詳細情報を確認できます
+          </li>
+          <li class="explain-content">
+          お気に入りの練習場所を見つけよう
+          </li>
+        <ul>
+      </div>
+    </div>
   </div>
-  <footer>
-    <div class="domain">(c)Maro</div>
-  </footer>
+<%= render "shared/footer" %> 

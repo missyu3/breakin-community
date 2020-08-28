@@ -9,7 +9,7 @@
 
 .item-box {
   background-color: #FFF;
-  width: 70vw;
+  width: 30vw;
   min-width: 1200px;
   padding: 10vh 15vw;
   display: flex;
@@ -24,10 +24,10 @@
 }
 
 .item-box-img {
-  height: 50vh;
-  width: 60vw;
-  min-height: 500px;
-  background-color: rgb(205, 202, 202);
+  height: 25vh;
+  width: 25%;
+  min-height: 200px;
+  /* background-color: rgb(205, 202, 202); */
   object-fit: contain;
 }
 
@@ -78,11 +78,11 @@
 
 .detail-table {
   margin-bottom: 30px;
-  width: 100%;
+  width: 25%;
 }
 
 .detail-item {
-  width: 20%;
+  width: 40%;
   background-color: #eee;
   border: 1px solid #dedede;
   font-size: 14px;
@@ -90,8 +90,8 @@
 }
 
 .detail-value {
-  width: 80%;
-  padding: 20px;
+  width: 60%;
+  padding: 10px;
   border: 1px solid #dedede;
   font-size: 14px;
 }
