@@ -5,7 +5,7 @@ body {
 header {
   height: 100px;
   /* background-color: antiquewhite; */
-  background-color: hsla(240, 40%, 90%, 1.0);
+  background-color: #337079;
 }
 
 .header-contents {
@@ -38,6 +38,19 @@ header {
   width: 300px;
 }
 
+.header-title {
+  font-size: 32px;
+  font-style: italic;
+  letter-spacing: .1em;
+  text-shadow: -4px 3px 0 #fa4141, -8px 6px 0 #000;
+  line-height: 100px
+}
+
+.header-title > a {
+  color: #fff;
+  text-decoration:none;
+}
+
 .header-container {
   display: inline-block;
   display: flex;
@@ -58,7 +71,7 @@ header {
   width: 500px;
 }
 
-.header-container-contents > ul > a {
+.header-list {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin: 0px 5px;
   font-weight: bold;
@@ -66,11 +79,10 @@ header {
   text-align:center;
 }
 
-a {
+.header-list > a {
   text-decoration: none;
   color:black;
 }
-
 
 // #search
 
@@ -82,7 +94,7 @@ a {
 footer {
   height: 50px;
   /* background-color: rgba(255, 127, 80, 0.473); */
-  background-color: hsla(120, 40%, 90%, 1.0);
+  background-color: #337079;
 }
 
 .domain {
