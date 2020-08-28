@@ -3,6 +3,11 @@
 <%= link_to "ここの情報を編集する", edit_place_path(@place.id), method: :get %>
 <%= link_to "削除する", place_path, method: :delete  %>
 <%= link_to "トップページへ戻る" ,root_path %>
+<% if @place.image.attached?%>
+  <%= image_tag @place.image ,class:"item-box-img" %>
+<% else %>
+  <%= image_tag ("default_place.png") ,class:"item-box-img" %>
+<% end %>
 <%= %>
 <%= %>
 <%= %>
@@ -49,29 +54,26 @@
 <%
 =end%>
 
-    <div class="item-explain-box">
-      <span><%= "商品説明" %></span>
-    </div>
     <table class="detail-table">
       <tbody>
         <tr>
-          <th class="detail-item">出品者</th>
+          <th class="detail-item">練習場所名</th>
           <td class="detail-value"><%= @place.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">カテゴリー</th>
+          <th class="detail-item">住所</th>
           <td class="detail-value"><%= @place.address %></td>
         </tr>
         <tr>
-          <th class="detail-item">商品の状態</th>
+          <th class="detail-item">主な練習時間</th>
           <td class="detail-value"><%= @place.main_time %></td>
         </tr>
         <tr>
-          <th class="detail-item">配送料の負担</th>
+          <th class="detail-item">利用可能時間</th>
           <td class="detail-value"><%= @place.available_time%></td>
         </tr>
         <tr>
-          <th class="detail-item">発送元の地域</th>
+          <th class="detail-item">１時間当たりの金額</th>
           <td class="detail-value"><%= @place.price %></td>
         </tr>
       </tbody>

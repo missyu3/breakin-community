@@ -1,0 +1,156 @@
+/* main */
+.main {
+  height: 600px;
+  /* background-color: rgba(95, 158, 160, 0.39); */
+  /* background-image: url(IMG_9797.JPG); */
+  background-size: cover;
+  background-position: center;
+
+  background-image: url("<%= asset_path('background5.jpg') %>");
+  display:flex;
+}
+
+/* メインの左 */
+.main-contents-left {
+  height: 600px;
+  width:60%;
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+  align-items: center;
+  /*background-color: hsla(30, 40%, 90%, 1.0);*/
+}
+
+.place {
+  font-size:32px;
+  font-weight:bold;
+  position: relative;
+  padding:8px;
+  margin-bottom:24px;
+  text-align: center;
+  color:#fff;
+}
+
+.place:before {
+  position: absolute;
+  bottom: -5px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 5px;
+  content: '';
+  border-radius: 3px;
+  background: red;
+}
+
+#target {
+  width: 750px;
+  height: 400px;
+}
+
+a {
+  color: #000000;
+  text-decoration:none;
+}
+
+.search {
+  padding:24px 0;
+  display:block;
+}
+
+#address {
+  display:inline-block;
+  width:300px;
+}
+
+#search {
+  cursor:pointer;
+  display: inline-block;
+  appearance: none;
+  border-radius: 5px;
+  background: #fd9535;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
+  border:1px solid #fff;
+}
+
+#search:hover {
+  background: #fda555;
+}
+
+
+
+.direction {
+  display:flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.btn {
+  width: 150px;
+  background: #337079;
+  text-align: center;
+  border-radius: 4%;
+  border:1px solid #fff;
+  bottom: 32px;
+  right: 24px;
+  padding: 15px 0;
+  margin-bottom:20px;
+  cursor:pointer;
+  color:#FFF;
+}
+
+/* メインの右 */
+
+.main-contents-right {
+  width:40%;
+  /*background-color:#DDD;*/
+}
+
+.main-content-right-upper {
+  width:85%;
+  height:75%;
+  margin:0 auto;
+}
+
+.upper-explain-title {
+  padding-top:88px;
+  color: #FFFFFF;
+  font-family: "Poppins", Poppins;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.explain-content {
+  color: #FFFFFF;
+  list-style:none;
+  font-size: 20px;
+}
+
+.main-content-right-lower {
+  width:85%;
+  height:25%;
+  margin:0 auto;
+}
+
+.lower-explain-title {
+  color: #FFFFFF;
+  font-family: "Poppins", Poppins;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.new-place {
+  font-size:32px;
+  font-weight:bold;
+  padding:0 8px;
+  border-radius: 4%;
+  border:1px solid #fff;
+  background-color: #fd9535;
+  text-align: center;
+}
+
+.new-place > a {
+  color:#fff;
+  text-decoration:none;
+}

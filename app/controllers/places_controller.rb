@@ -1,5 +1,6 @@
 class PlacesController < ApplicationController 
   before_action :find_place, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_session, only:[:new, :edit, :destroy]
 
   def index
     @places = Place.all
@@ -46,12 +47,14 @@ class PlacesController < ApplicationController
 
   private
   def params_place
-    params.require(:place).permit(:name, :address, :main_time, :available_time, :price, user_ids:[])
+    params.require(:place).permit(:image, :name, :address, :main_time, :available_time, :price, user_ids:[])
   end
 
   def find_place
     @place = Place.find(params[:id])
   end
-  
-  
+
+  def move_to_session
+    redirect_to new_user_session_path unless user_signed_in?
+  end
 end
