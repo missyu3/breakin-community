@@ -6,17 +6,19 @@
   /* background-size: cover; */
   /* background-position: center; */
   background-repeat: round;
+  background-image: url("<%= asset_path('background.jpg') %>");
+  display:flex;
 }
 
-.main-contents {
+/* メインの左 */
+.main-contents-left {
   height: 600px;
-  width:80%;
+  width:60%;
   display: flex;
   justify-content: center;
   flex-direction:column;
   align-items: center;
-  margin:0 auto;
-  background-color: hsla(30, 40%, 90%, 1.0);
+  /*background-color: hsla(30, 40%, 90%, 1.0);*/
 }
 
 /* .place {
@@ -93,7 +95,7 @@
 .direction {
   display:flex;
   justify-content: space-between;
-  width: 900px;
+  width: 90%;
 }
 
 .btn {
@@ -103,8 +105,32 @@
   border-radius: 4%;
   border:1px solid #fff;
   bottom: 32px;
-  right: 32px;
+  right: 24px;
   padding: 15px 0;
   margin-bottom:20px;
   cursor:pointer;
+}
+
+/* メインの右 */
+
+.main-contents-right {
+  width:40%;
+  /*background-color:#DDD;*/
+}
+
+.main-content-right {
+  width:85%;
+  padding-top:88px;
+  margin:0 auto;
+}
+
+.explain-title {
+  color: #FFFFFF;
+  font-family: "Poppins", Poppins;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.explain-content {
+  list-style:none;
 }
