@@ -16,7 +16,6 @@
 ## places テーブル
 | Column              | Type   | Options     |
 | --------------------| ------ | ----------- |
-| image               | string | null: false |
 | name                | string | null: false |
 | address             | string | null: false |
 | main_time           | time | null: false |
