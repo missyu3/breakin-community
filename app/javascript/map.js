@@ -77,7 +77,7 @@ function initMap() {
       });
     });
   });
-  // たくさんのクラスの情報を取得して配列にしてそこにマーカーを立てる
+  // たくさんのクラスの情報を取得して配列にしてそこにマーカーを立て、クリックするとウィンドウが出る
   const places = document.getElementsByClassName("practicePlace");
   const names = document.getElementsByClassName("practiceName");
   const chats = document.getElementsByClassName("practiceChat");
