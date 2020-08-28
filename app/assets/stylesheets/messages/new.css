@@ -4,12 +4,12 @@
 }
 /* 左 */
 .side-bar {
-  background-color:#253141;
+  background-color:#337079;
   width:300px;
 }
 
 .side-header {
-  background-color:#253141;
+  background-color:#337079;
   height:100px;
   padding:0 20px;
   display:flex;
@@ -19,7 +19,7 @@
 
 .user-name > a {
   color:#fafafa;
-  font-size:16px;
+  font-size:36px;
   text-decoration:none;
 }
 
@@ -31,21 +31,58 @@
   padding:14px;
 }
 
-.room-create > p {
-  border:1px solid red;
-  text-decoration:none;
-  color:red;
+
+.join > input {
+  color: #000;
+  background-color: #fff100;
+  border-bottom: 5px solid #ccc100;
+}
+
+.join > input:hover {
+  margin-top: 3px;
+  color: #000;
+  background: #fff20a;
+  border-bottom: 2px solid #ccc100;
+}
+
+.sanka {
   padding:10px;
+  border: 2px solid #000;
+  border-radius: 0;
+  background: #fff;
 }
 
-.rooms {
-  background-color:#2f3e51;
+.new-session {
+  color: #000;
+  background-color: #fff100;
+  border-bottom: 5px solid #ccc100;
+  padding:10px 5px;
+  font-size:15px;
+}
+
+.new-session:hover {
+  margin-top: 3px;
+  color: #000;
+  background: #fff20a;
+  border-bottom: 2px solid #ccc100;
+}
+/* 左の練習場所情報 */
+.place-contents {
+  background-color:#337079;
   height:calc(100% - 100px);
-  padding:0 20px;
+  padding:20px 20px;
 }
 
-.room {
-  padding:20px 0 40px;
+.place-content-list {
+  padding:20px 10px 30px;
+  color: #404040;
+  border-left: solid 6px #1fa67a;
+  border-bottom: solid 2px #dadada;
+  background: #fafafa;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  list-style-type: none;
+  font-weight: bold;
 }
 
 .room > p {
@@ -72,9 +109,11 @@
 }
 
 .title {
-  padding:36px 0 0;
-  font-size:24px;
+  padding:24px 0 0;
+  font-size:36px;
+  font-weight:bold;
   color:#333;
+  font-family:"Yu Gothic", "游ゴシック", "游ゴシック体";  
 }
 
 .exit {
@@ -82,9 +121,9 @@
 }
 
 .exit > a {
-  border:1px solid darkred;
+  border:1px solid #337079;
   text-decoration:none;
-  color:darkred;
+  color:#337079;
   padding:20px;
 }
 
@@ -103,6 +142,10 @@
 
 .message-content {
   display:flex;
+}
+
+.lower-message {
+  padding-bottom:20px;
 }
 
 .message-name {
@@ -142,25 +185,31 @@
   padding-left: 10px;
 }
 
-.commit {
-  background-color: #38AEF0;
-  border: none;
-  color: white;
-  font-size: 16px;
-  height: 50px;
-  margin-left: 15px;
-  padding: 0 20px;
-}
-
 .form-image {
-  font-size: 12px;
-  background-color: lightblue;
-  color: white;
+  display: inline-block;
+  width:60px;
+  height:40px;
+  background-color: #337079;
   padding: 12px;
   width: 60px;
   margin: 5px 10px;
+  color:#fff;
   text-align: center;
+  font-size:14px;
 }
+
+.commit {
+  color: #000;
+  background-color: #fff100;
+  border-bottom: 5px solid #ccc100;
+}
+
+.commit:hover {
+  margin-top: 3px;
+  color: #000;
+  background-color: #fff100;
+}
+
 
 .hidden {
   display: none;
