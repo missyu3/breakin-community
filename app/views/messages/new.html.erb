@@ -41,10 +41,7 @@
             <p>１時間当たりの金額 : </p><p class= "place-info"><%= @place.price%>円</p>
         </div>
         <div class="place-content-list">
-            <p>よく練習している時間 : </p><p class= "place-info"><%= @place.main_time%></p>
-        </div>
-        <div class="place-content-list">
-            <p>利用可能時間 : </p><p class= "place-info"><%= @place.available_time%></p>
+            <p>備考 : </p><p class= "place-info"><%= @place.remark%></p>
         </div>
         <div class="place-content-list">
             <p>このチャットの参加人数 : </p><p class= "place-info"><%= "#{@user_places.where(place_id: @place.id).count}人"%></p>
