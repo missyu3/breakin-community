@@ -18,9 +18,9 @@
 | --------------------| ------ | ----------- |
 | name                | string | null: false |
 | address             | string | null: false |
-| main_time           | time | null: false |
-| available_time      | time | null: false |
 | price               | integer | null: false |
+| remark              | text |
+
 
 ### Association
 - has_many :users
