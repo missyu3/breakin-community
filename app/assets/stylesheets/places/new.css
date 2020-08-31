@@ -1,12 +1,14 @@
-.place-logo {
-  /* padding: 1vh 0; */
+.new-contents {
+  background-color: #f1f1f1;
+  height:100%;
+  width:100%;
 }
 
 .contents {
   width:800px;
   height:600px;
   margin: 0 auto;
-  background-color:skyblue;
+  background-color:#fff;
 }
 
 .content {
@@ -15,46 +17,129 @@
   text-align:center;
   justify-content:center;
   align-items:center;
+  padding-top:20px;
 }
 
 .new-name {
-  width:250px;
-  padding-bottom:24px;
+  width:600px;
+  height:100px;
+  padding-bottom:20px;
   display:flex;
-  flex-direction:column;
+  justify-content:space-between;
 }
+
+.new-name-text {
+  font-size:24px;
+  width:30%;
+  line-height:80px;
+  text-align:left;
+}
+.new-name-form {
+  width:50%;
+}
+
+.new-name-form > textarea {
+  height:80px;
+  width:100%;
+}
+
+
 .new-address {
-  width:250px;
-  padding-bottom:24px;
+  width:600px;
+  padding-bottom:20px;
   display:flex;
-  flex-direction:column;
+  height:100px;
+  justify-content:space-between;
 }
 
-.block {
-  /* display:block; */
+.new-address-text {
+  font-size:24px;
+  width:30%;
+  line-height:80px;
+  text-align:left;
+}
+.new-address-form {
+  width:50%;
 }
 
-.time-content {
-  width:350px;
-  padding-bottom:24px;
+.new-address-form > textarea {
+  height:80px;
+  width:100%;
+}
+
+.new-remark {
+  width:600px;
+  height:100px;
+  padding-bottom:20px;
   display:flex;
-  /* flex-direction:column; */
+  justify-content:space-between;
 }
 
-.time {
-  display:flex;
+.new-remark-text {
+  font-size:24px;
+  width:30%;
+  line-height:80px;
+  text-align:left;
+}
+.new-remark-form {
+  width:50%;
 }
 
-.price-content {
-  width:100px;
-  padding-bottom:24px;
+.new-remark-form > textarea {
+  height:100px;
+  width:100%;
+}
+
+.new-price {
+  width:600px;
+  height:100px;
+  padding-bottom:20px;
   display:flex;
   justify-content:space-between;
   text-align:right;
 }
 
-.price {
-  width:50px;
+.new-price-text {
+  font-size:24px;
+  width:50%;
+  line-height:80px;
+  text-align:left;
+}
+.new-price-form {
+  width:50%;
+  display:flex;
+  justify-content:center;
+  line-height:80px;
+}
+
+.new-price-form > .price {
+  height:30px;
+  width:40%;
+  margin:25px 10px 0;
+  line-height:80px;
   text-align:right;
-  padding-right:10px;
+}
+
+.new-image {
+  width:600px;
+  height:100px;
+  padding-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.new-image-text {
+  font-size:24px;
+  width:50%;
+  line-height:80px;
+  text-align:left;
+}
+
+.new-image-form {
+  padding:25px;
+  width:25%;
+}
+
+.new-image-form > image {
+  width:100%;
 }
