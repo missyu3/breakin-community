@@ -1,0 +1,173 @@
+.new-contents {
+  background-color: #f1f1f1;
+  height:100%;
+  width:100%;
+}
+
+.contents {
+  width:800px;
+  height:600px;
+  margin: 0 auto;
+  background-color:#fff;
+}
+
+.content {
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  justify-content:center;
+  align-items:center;
+  padding-top:20px;
+}
+
+.new-name {
+  width:600px;
+  height:100px;
+  padding-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.new-name-text {
+  font-size:24px;
+  width:30%;
+  line-height:80px;
+  text-align:left;
+}
+.new-name-form {
+  width:50%;
+}
+
+.new-name-form > textarea {
+  height:80px;
+  width:100%;
+}
+
+
+.new-address {
+  width:600px;
+  padding-bottom:20px;
+  display:flex;
+  height:100px;
+  justify-content:space-between;
+}
+
+.new-address-text {
+  font-size:24px;
+  width:30%;
+  line-height:80px;
+  text-align:left;
+}
+.new-address-form {
+  width:50%;
+}
+
+.new-address-form > textarea {
+  height:80px;
+  width:100%;
+}
+
+.new-remark {
+  width:600px;
+  height:100px;
+  padding-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.new-remark-text {
+  font-size:24px;
+  width:30%;
+  line-height:80px;
+  text-align:left;
+}
+.new-remark-form {
+  width:50%;
+}
+
+.new-remark-form > textarea {
+  height:100px;
+  width:100%;
+}
+
+.new-price {
+  width:600px;
+  height:100px;
+  padding-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  text-align:right;
+}
+
+.new-price-text {
+  font-size:24px;
+  width:50%;
+  line-height:80px;
+  text-align:left;
+}
+.new-price-form {
+  width:50%;
+  display:flex;
+  justify-content:center;
+  line-height:80px;
+}
+
+.new-price-form > .price {
+  height:30px;
+  width:40%;
+  margin:25px 10px 0;
+  line-height:80px;
+  text-align:right;
+}
+
+.new-image {
+  width:600px;
+  height:100px;
+  padding-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.new-image-text {
+  font-size:24px;
+  width:50%;
+  line-height:80px;
+  text-align:left;
+}
+
+.new-image-form {
+  padding:25px 0;
+  margin:0 auto;
+  width:50%;
+}
+
+.new-image-form > .image {
+  width:100%;
+}
+
+.content > input {
+  color: #000;
+  background-color: #fff100;
+  border-bottom: 5px solid #ccc100;
+  margin-bottom:10px;
+}
+
+.content > input:hover {
+  margin-top: 3px;
+  color: #000;
+  background: #fff20a;
+  border-bottom: 2px solid #ccc100;
+}
+
+.content > a {
+  color: #000;
+  background-color:rgba(51,112,121,20%);
+  border-bottom: 5px solid rgba(51,112,121,40%);
+}
+
+.content > a:hover {
+  margin-top: 3px;
+  color: #000;
+  background-color:rgba(51,112,121,20%);
+  border-bottom: 2px solid rgba(51,112,121,40%);
+}

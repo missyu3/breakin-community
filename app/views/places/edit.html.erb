@@ -1,8 +1,54 @@
-<%= form_with model: @place, local: true do |f| %>
-  <%= f.text_area :name, placeholder:"練習場所の名前（必須 40文字まで)", maxlength:"40" %>
-  <%= f.text_area :address, placeholder:"練習場所の住所（必須 40文字まで)", maxlength:"40" %>
-  <%= f.text_area :remark, placeholder:"練習場所の住所（必須 40文字まで)", maxlength:"40" %>
-  <%= f.text_field :price, placeholder:"例）300"  %><span>円</span>
-  <%= f.submit "新しい練習場所を登録する！" %>
-  <%=link_to 'もどる', root_path%>
-<% end %>
+<%= render "shared/header" %> 
+<div class="new-contents">
+  <div class="contents">
+    <%= form_with model: @place, url: places_path, local: true do |f| %>
+      <div class="content">
+        <div class="new-name">
+          <div class="new-name-text">
+            練習場所の名前
+          </div>
+          <div class="new-name-form">
+            <%= f.text_area :name, placeholder:"（必須 )", maxlength:"40" %>
+          </div>
+        </div>
+        <div class="new-address">
+          <div class="new-address-text">
+            練習場所の住所
+          </div>
+          <div class="new-address-form">
+            <%= f.text_area :address, placeholder:"（必須 )", maxlength:"80" %>
+          </div>
+        </div>
+        <div class="new-price">
+          <div class="new-price-text">
+            金額
+          </div>
+          <div class="new-price-form">
+            <span class="span">¥</span>
+            <%= f.text_field :price, placeholder:"例）300" ,class:"price" %>
+          </div>
+        </div>
+        <div class="new-remark">
+          <div class="new-remark-text">
+            備考欄
+          </div>
+          <div class="new-remark-form">
+            <%= f.text_area :remark, placeholder:"よく練習している時間帯や施設の練習可能時間などの詳細などを記入ください", maxlength:"100" %>
+          </div>
+        </div>
+        <div class="new-image">
+          <div class="new-image-text">
+            写真(練習風景など)
+          </div>
+          <div class="new-image-form">
+            <%= f.file_field :image, class: 'image' %>
+          </div>
+        </div>
+        <input name="place[user_ids][]" type="hidden" value=<%=current_user.id%> >
+        <%= f.submit "変更する！" %>
+        <%=link_to 'もどる', root_path%>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render "shared/footer" %> 
