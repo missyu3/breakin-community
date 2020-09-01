@@ -19,21 +19,21 @@
             <%= f.text_area :address, placeholder:"（必須 )", maxlength:"80" %>
           </div>
         </div>
+        <div class="new-price">
+          <div class="new-price-text">
+            金額
+          </div>
+          <div class="new-price-form">
+            <span class="span">¥</span>
+            <%= f.text_field :price, placeholder:"例）300" ,class:"price" %>
+          </div>
+        </div>
         <div class="new-remark">
           <div class="new-remark-text">
             備考欄
           </div>
           <div class="new-remark-form">
             <%= f.text_area :address, placeholder:"よく練習している時間帯や施設の練習可能時間などの詳細などを記入ください", maxlength:"100" %>
-          </div>
-        </div>
-        <div class="new-price">
-          <div class="new-price-text">
-            １時間当たりの金額
-          </div>
-          <div class="new-price-form">
-            <span class="span">¥</span>
-            <%= f.text_field :price, placeholder:"例）300" ,class:"price" %>
           </div>
         </div>
         <div class="new-image">
