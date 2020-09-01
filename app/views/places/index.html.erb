@@ -9,13 +9,10 @@
       </div>
       <% @places.each do |place|%>
       <div class= "practicePlace hidden"><%= place.address%></div>
-      <div class= "practiceName hidden">
-        <%= link_to place_path(place.id), method: :get do %>
-          <%= "#{place.name}の詳細はこちら"%><br></div>
-        <% end %>
+      <div class= "practiceName hidden"></div>
       <div class= "practiceChat hidden">
         <%= link_to new_place_message_path(place.id) , method: :get do %>
-          <%= "チャットページへ" %>
+          <%= "#{place.name}のチャットページへ" %>
         <% end %>
       </div>
       <% end %>
@@ -39,6 +36,48 @@
         お気に入りの練習場所を見つけよう
         </div>
       </div>
+      <%#マーカークリックした場所の情報#%>
+      <div class="main-content-right-middle ">
+        <% @places.each do |place|%>
+          <div class="hidden place-show" id="placeShow">
+            <div class="place-show-left">
+              <% if place.image.attached?%>
+                <div class="item-box">
+                  <%= image_tag place.image ,class:"item-box-img" %>
+                </div>
+              <% else %>
+                <div class="item-box">
+                  <%= image_tag ("default_place.png") ,class:"item-box-img" %>
+                </div>
+              <% end %>
+            </div>
+            <div class="place-show-right">
+              <table class="detail-table">
+                <tbody>
+                  <tr>
+                    <th class="detail-item">場所名</th>
+                    <td class="detail-value"><%= place.name %></td>
+                  </tr>
+                  <tr>
+                    <th class="detail-item">住所</th>
+                    <td class="detail-value"><%= place.address %></td>
+                  </tr>
+                  <tr>
+                    <th class="detail-item">金額</th>
+                    <td class="detail-value"><%= place.price %></td>
+                  </tr>
+                  <tr>
+                    <th class="detail-item-remark">備考</th>
+                    <td class="detail-value-remark"><%= place.remark %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <%#マーカークリックした場所の情報#%>
+
       <div class="main-content-right-lower">
         <div class="lower-explain-title">
         新しい練習場所を共有しよう

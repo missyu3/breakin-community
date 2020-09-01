@@ -17,7 +17,7 @@ function initMap() {
   //   map: map,
   //   title: 'tokyo'
   // })
-  // hiddennクラスで隠してあるlink_toを取得→たくさんのクラスの情報を取得して配列にしてそれぞれにマーカーを立てさせる
+  // hiddenクラスで隠してあるlink_toを取得→たくさんのクラスの情報を取得して配列にしてそれぞれにマーカーを立てさせる
   // const about = document.getElementById("about") 
   // const saitama = {lat: 35.831167,lng: 139.667052};
   // 埼玉にマーカーを立てる
@@ -81,12 +81,14 @@ function initMap() {
   const places = document.getElementsByClassName("practicePlace");
   const names = document.getElementsByClassName("practiceName");
   const chats = document.getElementsByClassName("practiceChat");
-  const placeA = Array.from(places);
-  // placeA.forEach(function (place) {
+  const placesArray = Array.from(places);
+  const placeShows =document.getElementsByClassName("place-show"); 
+  const placeShowsArray = Array.from(placeShows);
+  // placesArray.forEach(function (place) {
   // });
-  for(let i = 0; i < placeA.length; i++){
+  for(let i = 0; i < placesArray.length; i++){
     geocoder.geocode({
-        address: placeA[i].innerHTML 
+        address: placesArray[i].innerHTML 
       }, function(results, status) {
         if (status !== 'OK') {
           alert('Failed: ' + status);
@@ -103,6 +105,12 @@ function initMap() {
           });
           marker.addListener('click', function() {
           infoWindow.open(map, marker);
+          for(let i = 0; i < placesArray.length; i++){
+            if (placeShowsArray[i].getAttribute("style") == "display:flex;") { 
+              placeShowsArray[i].setAttribute("style", "display:none;");
+            }
+          }
+          placeShowsArray[i].setAttribute("style", "display:flex;");
           });
         } else {
           alert('No results found');

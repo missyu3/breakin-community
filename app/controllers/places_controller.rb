@@ -19,9 +19,6 @@ class PlacesController < ApplicationController
       render :new
     end
   end
-
-  def show
-  end
   
   def edit
   end
