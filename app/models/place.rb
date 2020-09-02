@@ -1,8 +1,8 @@
 class Place < ApplicationRecord
   with_options presence: true do
-    validates :name
-    validates :address
-    validates :price
+    validates :name, length: { maximum: 40 }
+    validates :address, length: { maximum: 80 }
+    validates :price, length: { maximum: 100 }
   end
   has_many :messages
   has_many :user_places
