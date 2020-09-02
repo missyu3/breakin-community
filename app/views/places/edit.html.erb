@@ -1,7 +1,8 @@
 <%= render "shared/header" %> 
 <div class="new-contents">
   <div class="contents">
-    <%= form_with model: @place, url: places_path, local: true do |f| %>
+    <%= form_with model: @place, url: place_path, local: true do |f| %>
+      <%= render 'error_messages', place: @place %>
       <div class="content">
         <div class="new-name">
           <div class="new-name-text">
@@ -24,8 +25,7 @@
             金額
           </div>
           <div class="new-price-form">
-            <span class="span">¥</span>
-            <%= f.text_field :price, placeholder:"例）300" ,class:"price" %>
+            <%= f.text_area :price, placeholder:"例）300" ,class:"price" %>
           </div>
         </div>
         <div class="new-remark">

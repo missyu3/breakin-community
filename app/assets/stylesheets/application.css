@@ -99,3 +99,9 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+.error-alert > ul {
+  margin:10px auto;
+  width:80%;
+  border:1px solid #337079;
+}
