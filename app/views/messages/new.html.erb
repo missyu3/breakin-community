@@ -13,7 +13,7 @@
         <% end %>
         </div>
         <div class="room-create">
-        <%#ユーザーidと練習場所idが共に中間テーブルに存在しないならチャットに参加するを表示%>
+        <%#チャットの参加有無による条件分岐%>
           <% unless @user_places.where(user_id: current_user, place_id: @place.id).exists? %>
             <%= form_with model: [@user_place, @place], url: user_places_path, method: :post, local: true do |f| %>
               <input name="user_place[user_id][]" type="hidden" value=<%=current_user.id%>>
@@ -25,6 +25,7 @@
           <% else %>
             <p class="sanka">参加中</p>
           <% end %>
+        <%#チャットの参加有無による条件分岐%>
         </div>
       <% else %>
         <div class="new-session">
@@ -56,8 +57,16 @@
         <%= @place.name%>
       </div>
       <div class="exit">
-        <%= link_to "ここの情報を編集する", edit_place_path(@place), method: :get %>
-        <%= link_to "削除する", place_path(@place), method: :delete  %>
+        <%#チャットに参加している場合のみ表示する%>
+        <% if @user_places.where(user_id: current_user, place_id: @place.id).exists? %>
+          <%#最初にこの練習場所を登録した人のみが編集と削除ができる%>
+          <% if @user_places.where(place_id: @place.id).order(created_at: :asc).first == @user_places.where(user_id: current_user, place_id: @place.id).first %>
+            <%= link_to "ここの情報を編集する", edit_place_path(@place), method: :get %>
+            <%= link_to "削除する", place_path(@place), method: :delete  %>
+          <% end %>
+          <%#最初にこの練習場所を登録した人のみが編集と削除ができる%>
+        <% end %>
+        <%#チャットに参加している場合のみ表示する%>
         <%= link_to "トップページへ戻る" ,root_path %>
       </div>
     </div>
