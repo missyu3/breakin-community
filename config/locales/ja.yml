@@ -6,7 +6,7 @@ ja:
         email: Eメール
         password: パスワード
       place:
-        name: テキスト
+        name: 名前
         address: 住所
         price: 金額
     errors:
