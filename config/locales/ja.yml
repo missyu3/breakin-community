@@ -9,6 +9,8 @@ ja:
         name: 名前
         address: 住所
         price: 金額
+      message:
+        text: テキスト
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
