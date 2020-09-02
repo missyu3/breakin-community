@@ -18,7 +18,7 @@
 | --------------------| ------ | ----------- |
 | name                | string | null: false |
 | address             | string | null: false |
-| price               | integer | null: false |
+| price               | string | null: false |
 | remark              | text |
 
 

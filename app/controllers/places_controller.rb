@@ -23,7 +23,6 @@ class PlacesController < ApplicationController
   def edit
   end
   
-  
   def update
     if @place.update(params_place)
       redirect_to root_path
@@ -44,7 +43,7 @@ class PlacesController < ApplicationController
 
   private
   def params_place
-    params.require(:place).permit(:image, :name, :address, :main_time, :available_time, :price, user_ids:[])
+    params.require(:place).permit(:image, :name, :address, :remark, :price, user_ids:[])
   end
 
   def find_place

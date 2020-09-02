@@ -6,7 +6,7 @@
 
 .contents {
   width:800px;
-  height:600px;
+  height:80%;
   margin: 0 auto;
   background-color:#fff;
 }
@@ -108,16 +108,11 @@
 .new-price-form {
   width:50%;
   display:flex;
-  justify-content:center;
-  line-height:80px;
 }
 
 .new-price-form > .price {
-  height:30px;
-  width:40%;
-  margin:25px 10px 0;
-  line-height:80px;
-  text-align:right;
+  height:80px;
+  width:100%;
 }
 
 .new-image {
@@ -136,10 +131,39 @@
 }
 
 .new-image-form {
-  padding:25px;
-  width:25%;
+  padding:25px 0;
+  margin:0 auto;
+  width:50%;
 }
 
-.new-image-form > image {
+.new-image-form > .image {
   width:100%;
+}
+
+.content > input {
+  color: #000;
+  background-color: #fff100;
+  border-bottom: 5px solid #ccc100;
+  margin-bottom:10px;
+}
+
+.content > input:hover {
+  margin-top: 3px;
+  color: #000;
+  background: #fff20a;
+  border-bottom: 2px solid #ccc100;
+}
+
+.content > a {
+  color: #000;
+  background-color:rgba(51,112,121,20%);
+  border-bottom: 5px solid rgba(51,112,121,40%);
+  margin-bottom:10px;
+}
+
+.content > a:hover {
+  margin-top: 3px;
+  color: #000;
+  background-color:rgba(51,112,121,20%);
+  border-bottom: 2px solid rgba(51,112,121,40%);
 }

@@ -2,13 +2,14 @@
 <div class="new-contents">
   <div class="contents">
     <%= form_with model: @place, url: places_path, local: true do |f| %>
+      <%= render 'error_messages', place: @place %>
       <div class="content">
         <div class="new-name">
           <div class="new-name-text">
             練習場所の名前
           </div>
           <div class="new-name-form">
-            <%= f.text_area :name, placeholder:"（必須 )", maxlength:"40" %>
+            <%= f.text_area :name, placeholder:"（必須 )\n施設の名前を入力してください", maxlength:"40" %>
           </div>
         </div>
         <div class="new-address">
@@ -16,7 +17,7 @@
             練習場所の住所
           </div>
           <div class="new-address-form">
-            <%= f.text_area :address, placeholder:"（必須 )", maxlength:"80" %>
+            <%= f.text_area :address, placeholder:"（必須 )\nGoogleMapで検索できる地名でないと登録できません", maxlength:"80" %>
           </div>
         </div>
         <div class="new-price">
@@ -24,8 +25,7 @@
             金額
           </div>
           <div class="new-price-form">
-            <span class="span">¥</span>
-            <%= f.text_field :price, placeholder:"例）300" ,class:"price" %>
+            <%= f.text_area :price, placeholder:"（必須 )\n例) 100円/1h\n例) 3000円/人数" ,class:"price" %>
           </div>
         </div>
         <div class="new-remark">
@@ -33,7 +33,7 @@
             備考欄
           </div>
           <div class="new-remark-form">
-            <%= f.text_area :address, placeholder:"よく練習している時間帯や施設の練習可能時間などの詳細などを記入ください", maxlength:"100" %>
+            <%= f.text_area :remark, placeholder:"よく練習している時間帯や施設の練習可能時間などの詳細などを記入ください", maxlength:"100" %>
           </div>
         </div>
         <div class="new-image">
@@ -51,3 +51,4 @@
     <% end %>
   </div>
 </div>
+<%= render "shared/footer" %> 
