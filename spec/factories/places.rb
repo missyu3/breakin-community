@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :place do
-    name              {"ディズニーランド"}
-    address                 {"千葉県浦安市舞浜１−１"}
-    price              {"400円くらい"}
+    name              {Faker::Address.city}
+    address           {Faker::Address.street_address}
+    price              {Faker::Number.number(digits: 10)}
   end
 end
