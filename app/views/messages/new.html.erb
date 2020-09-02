@@ -83,9 +83,6 @@
     <% if @user_places.where(user_id: current_user, place_id: @place.id).exists? %>
       <%= form_with model: [@place, @message], html: {class: "form"} do |f| %>
           <%= f.text_field :text, class: 'message' %>
-          <label class="form-image">
-            <span class="image-file">画像</span>
-          </label>
           <%= f.submit '送信', class: 'commit' %>
       <% end %>
     <% end %>
