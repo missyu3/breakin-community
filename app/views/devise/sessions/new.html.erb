@@ -31,8 +31,13 @@
               <%= f.password_field :password, autocomplete: "off"%>
             </div>
           </div>
-          <div class='actions'>
-            <%= f.submit "Log in", class: 'btn'%>
+          <div class='field-submit'>
+            <div class='actions'>
+              <%= f.submit "Log in", class: 'btn'%>
+            </div>
+            <div class='actions'>
+              <%= link_to "ゲストログインはこちら", users_guest_sign_in_path, method: :post, class: 'btn'%>
+            </div>
           </div>
         </div>
       <% end %>

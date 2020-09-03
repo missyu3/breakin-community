@@ -61,6 +61,12 @@
   padding: 10px;
   letter-spacing: 1px;
 }
+.account-page .field .field-submit .btn {
+  width: 100%;
+  letter-spacing: 10px;
+  display:flex;
+  justify-content:space-around;
+}
 .account-page .btn {
   display: inline-block;
   height: 50px;
