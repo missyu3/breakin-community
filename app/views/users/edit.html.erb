@@ -25,8 +25,15 @@
             <%= f.email_field :email%>
           </div>
         </div>
-        <div class='actions'>
-          <%= f.submit "Update", class: 'btn'%>
+        <div class='field'>
+          <div class='field-submit'>
+            <div class='actions'>
+              <%= f.submit "Update", class: 'btn'%>
+            </div>
+            <div class='actions'>
+              <%= link_to "アカウント削除", user_registration_path, method: :delete, class: 'btn'%>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
