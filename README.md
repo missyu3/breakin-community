@@ -3,7 +3,7 @@
 ![result](https://user-images.githubusercontent.com/64772703/92210046-ffc21200-eec8-11ea-9d79-547c58767d1c.gif)
 ## 概要
 現在ポートフォリオとして作成中の<br>
-`ブレイクダンサーのコミュニティを活性化させること`をコンセプトとした練習場所共有アプリケーションです！<br<br>
+`ブレイクダンサーのコミュニティを活性化させること`をコンセプトとした練習場所共有アプリケーションです！<br><br>
 ・新たな練習場所を発見したり、自分の知っている練習場所を登録することができます。<br>
 ・また、練習場所ごとの掲示板を使用して一緒に練習する新しい仲間を作ることもできます。
 
@@ -47,14 +47,10 @@ https://breakin-community.herokuapp.com/
   
   <dt>APサーバ</dt>
   <dd>Puma</dd>
+  
+  <dt>テスト</dt>
+  <dd>Rubocop / Rspec / Capistrano</dd>
 </dl>
-
-APサーバ
-
-Puma
-データベース
-
-/ Rubocop / Rspec / Capistrano
 
 ## 課題や今後実装したい機能
 
