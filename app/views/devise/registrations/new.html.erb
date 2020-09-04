@@ -14,7 +14,7 @@
             <%= f.label :nickname%>
           </div>
           <div class='field-input'>
-            <%= f.text_field :nickname, autofocus: true%>
+            <%= f.text_field :nickname, maxlength:"15", autofocus: true%>
           </div>
         </div>
         <div class='field'>
@@ -42,8 +42,12 @@
             <%= f.password_field :password_confirmation, autocomplete: "off"%>
           </div>
         </div>
-        <div class='actions'>
-          <%= f.submit "Create Account", class: 'btn'%>
+        <div class='field'>
+          <div class='field-submit'>
+            <div class='actions'>
+              <%= f.submit "Create Account", class: 'btn'%>
+            </div>
+          </div>
         </div>
       </div>
     <% end %>
