@@ -100,6 +100,9 @@ select {
   }
 }
 
+.error-alert {
+  padding:10px;
+}
 .error-alert > ul {
   margin:10px auto;
   width:80%;
