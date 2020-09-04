@@ -1,6 +1,6 @@
 # Breakin'-Community
 
-![result](https://user-images.githubusercontent.com/64772703/92209367-d48af300-eec7-11ea-85ac-d49386c31ee2.gif)
+![result](https://user-images.githubusercontent.com/64772703/92210046-ffc21200-eec8-11ea-9d79-547c58767d1c.gif)
 ## 概要
 現在ポートフォリオとして作成中の<br>
 「ブレイクダンサーのコミュニティを活性化させること」をコンセプトとした練習場所共有アプリケーションです！<br>
