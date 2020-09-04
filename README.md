@@ -27,16 +27,14 @@ https://breakin-community.herokuapp.com/
 ## 本番環境
 <dl>
   <dt>インフラ</dt>
-  <dd>AWS( EC2 )</dd>
-  <dd>heroku</dd>
+  <dd>AWS( EC2 ) / heroku
   
   <dt>フロントエンド</dt>
   <dd>JavaScript / HTML / CSS</dd>
   
   
   <dt>バックエンド</dt>
-  <dd>Ruby 2.6.5</dd>
-  <dd>Rails 6.0.3.2</dd>
+  <dd>Ruby 2.6.5 / Rails 6.0.3.2
 
   <dt>データベース</dt>
   <dd>MySQL5.6.47</dd>Redis
