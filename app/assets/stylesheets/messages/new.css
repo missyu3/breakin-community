@@ -19,7 +19,9 @@
 
 .user-name > a {
   color:#fafafa;
-  font-size:36px;
+  font-size:20px;
+  display:inline-block;
+  max-width:150px;
   text-decoration:none;
 }
 

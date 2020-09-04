@@ -64,24 +64,31 @@ header {
   list-style-type: none;
   margin: 0 auto;
   display: flex;
-  line-height: 100px;
   /* background-color: beige; */
   padding: 0;
   width: 500px;
+  height:100%;
 }
 
 .header-list {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin: 0px 5px;
-  font-weight: bold;
   width: 50%;
+  font-weight: bold;
   text-align:center;
+  position:relative;
 }
 
 .header-list > a {
+  width: 100%;
   text-decoration: none;
   color:#FFF;
   font-size:20px;
+  position:absolute;
+  top:50%;
+  right:0;
+  -webkit-transform : translateY(-50%);
+  transform: translateY(-50%)
 }
 
 .notice {
