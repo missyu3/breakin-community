@@ -1,6 +1,6 @@
 # Breakin'-Community
 
-![demo](https://gyazo.com/7a0a4d06469285a1e8facda349cdafa5)
+https://user-images.githubusercontent.com/64772703/92209194-8fff5780-eec7-11ea-9e67-3af9fd5608f6.png
 ## 概要
 現在ポートフォリオとして作成中の<br>
 「ブレイクダンサーのコミュニティを活性化させること」をコンセプトとした練習場所共有アプリケーションです！<br>
