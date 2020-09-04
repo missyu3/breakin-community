@@ -25,38 +25,39 @@ https://breakin-community.herokuapp.com/
 トップページで詳細を表示させることでその練習場所に興味が湧かせるようにしています。
 
 ## 本番環境
-インフラ
 <dl>
   <dt>インフラ</dt>
   <dd>AWS( EC2 )</dd>
   <dd>heroku</dd>
-  <dt>オレンジ</dt>
-  <dd>橙色のフルーツ</dd>
+  
+  <dt>フロントエンド</dt>
+  <dd>JavaScript / HTML / CSS</dd>
+  
+  
+  <dt>バックエンド</dt>
+  <dd>Ruby 2.6.5</dd>
+  <dd>Rails 6.0.3.2</dd>
+
+  <dt>データベース</dt>
+  <dd>MySQL5.6.47</dd>Redis
+  <dd>Redis</dd>
+  
+  <dt>Webサーバ</dt>
+  <dd>Nginx</dd>
+  
+  <dt>APサーバ</dt>
+  <dd>Puma</dd>
 </dl>
 
-フロントエンド
-
-JavaScript / jQuery / HTML / CSS
-バックエンド
-
-Ruby 2.6.6
-Rails 5.2.4
-Webサーバ
-
-Nginx
 APサーバ
 
 Puma
 データベース
 
-RDS for MySQL 5.7.28
-Redis (リアルタイムチャット機能、ログインユーザのアクティブ判定でAction CableのPub/Subキューとして使用)
-CI / CD
-
-CircleCI / Rubocop / Rspec / Capistrano
-
-## 使用技術(開発環境)
+/ Rubocop / Rspec / Capistrano
 
 ## 課題や今後実装したい機能
 
-## DB設計
+## クラウドアーキテクチャ
+
+## 機能一覧
