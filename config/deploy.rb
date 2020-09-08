@@ -31,3 +31,6 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 end
+
+#Active_Storageでを上手く認証情報が読み込まれるように設定する
+append :linked_files, 'config/master.key'
