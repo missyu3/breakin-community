@@ -2,11 +2,11 @@
 <div class="mypage-wrapper">
   <div class= "mypage-left-contents">
     <div class= "user-image">
-      <%# if user.image.attached?%>
-
-      <%# else %>
+      <% if @user.image.attached?%>
+        <%= image_tag @user.image,class:"user-icon" %>
+      <% else %>
           <%= image_tag ("IMG_9789.JPG") ,class:"user-icon" %>
-      <%# end %>
+      <% end %>
     </div>
     <div class= "user-profile">
       <div class= "user-nickname">
@@ -37,6 +37,28 @@
         良く使う練習場所
       </div>
       <div class="user-place">
+        <% if @user_places.where(user_id: @user.id).count == 0 %>
+          <% if current_user == @user %>
+            <div class="mypage-main-content-right-lower">
+              <div class="lower-explain-title">
+              自分だけの新しい練習場所を共有しよう
+              </div>
+                <%= link_to "新規練習場所を作成する", new_place_path, method: :get, class:"new-place"%>
+            </div>
+            <div class="mypage-main-content-right-lower">
+              <div class="lower-explain-title">
+              練習場所のチャットに参加してみよう
+              </div>
+                <%= link_to "トップページへ", root_path, method: :get, class:"new-place"%>
+            </div>
+          <% else%>
+            <div class="mypage-main-content-right-lower">
+              <div class="mypage-lower-explain-title">
+                このユーザーが良く使う練習場所はまだありません
+              </div>
+            </div>
+          <% end %>
+        <% end %>
         <% @user_places.each do |user_place|%>
           <% if user_place.user_id == @user.id%>
             <div class="mypage-place-show" id="placeShow">
