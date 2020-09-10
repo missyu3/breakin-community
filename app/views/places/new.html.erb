@@ -9,7 +9,7 @@
             練習場所の名前
           </div>
           <div class="new-name-form">
-            <%= f.text_area :name, placeholder:"（必須 )\n施設の名前を入力してください" %>
+            <%= f.text_area :name, placeholder:"（必須 )\n施設の名前を入力してください", maxlength:"15" %>
           </div>
         </div>
         <div class="new-address">
@@ -17,7 +17,7 @@
             練習場所の住所
           </div>
           <div class="new-address-form">
-            <%= f.text_area :address, placeholder:"（必須 )\nGoogleMapで検索できる地名でないと登録できません" %>
+            <%= f.text_area :address, placeholder:"（必須 )\nGoogleMapで検索できる地名でないと登録できません", maxlength:"40" %>
           </div>
         </div>
         <div class="new-price">
@@ -25,7 +25,7 @@
             金額
           </div>
           <div class="new-price-form">
-            <%= f.text_area :price, placeholder:"（必須 )\n例) 100円/1h\n例) 3000円/人数" ,class:"price" %>
+            <%= f.text_area :price, placeholder:"（必須 )\n例) 100円/1h\n例) 3000円/人数", maxlength:"50"  %>
           </div>
         </div>
         <div class="new-remark">
@@ -33,7 +33,7 @@
             備考欄
           </div>
           <div class="new-remark-form">
-            <%= f.text_area :remark, placeholder:"よく練習している時間帯や施設の練習可能時間などの詳細などを記入ください" %>
+            <%= f.text_area :remark, placeholder:"よく練習している時間帯や施設の練習可能時間などの詳細などを記入ください", maxlength:"80" %>
           </div>
         </div>
         <div class="new-image">
