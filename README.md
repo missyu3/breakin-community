@@ -54,8 +54,9 @@ https://breakin-community.herokuapp.com/
 </dl>
 
 ## 課題や今後実装したい機能
-セッションでログイン保持
-## クラウドアーキテクチャ
+レスポンシブデザイン
+結合テストコード
+docker
 
 ## 機能一覧
 <dl>
