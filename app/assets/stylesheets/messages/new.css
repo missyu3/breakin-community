@@ -146,6 +146,16 @@
   display:flex;
 }
 
+.message-icon {
+  height: 5%;
+  width: 5%;
+}
+.message-user-icon {
+  /*object-fit: contain;*/
+  border-radius:50%;
+  border:1px solid #dedede;
+}
+
 .lower-message {
   padding-bottom:20px;
 }

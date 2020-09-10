@@ -74,6 +74,17 @@
       <div id='messages' class="message-contents">
         <% @messages.reverse_each do |message| %>
           <div class="message-content">
+            <div class="message-icon">
+              <% if message.user.image.attached?%>
+                <%= link_to user_path(message.user) do%>
+                  <%= image_tag message.user.image ,class:"message-user-icon"%>
+                <% end %>
+              <% else %>
+                <%= link_to user_path(message.user) do%>
+                  <%= image_tag ("default_place.png") ,class:"message-user-icon" %>
+                <% end %>
+              <% end %>
+            </div>
             <div class="message-name">
               <p><%= message.user.nickname %></p>
             </div>
