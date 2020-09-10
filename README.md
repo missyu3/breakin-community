@@ -9,6 +9,7 @@
 
 ## App URL
 https://breakin-community.herokuapp.com/
+http://54.249.2.5/
 
 ## 制作背景
 大学からブレイクダンスに没頭し、社会人でも続けていましたが、<br>
