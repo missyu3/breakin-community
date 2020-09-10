@@ -13,6 +13,13 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+def show
+  @user = User.find(params[:id])
+  @user_places = UserPlace.all
+end
+
+
   private
 
   def params_user
