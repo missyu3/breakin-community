@@ -1,0 +1,205 @@
+.mypage-wrapper {
+  display:flex;
+  height:calc(100vh - 200px);
+  background-image: url("<%= asset_path('background4.jpg') %>");
+  background-size: cover;
+  background-position: center;
+}
+/*中央左*/
+.mypage-left-contents {
+  background-color:rgba(255,255,255,0.2);
+  height:100%;
+  padding:20px 20px;
+  width:300px;
+  /*border-right:1px solid #fff;*/
+
+}
+.user-image {
+  height:50%;
+}
+
+.user-icon {
+  height: 100%;
+  width: 100%;
+  /*object-fit: contain;*/
+  border-radius:50%;
+  border:1px solid #dedede;
+}
+
+.user-profile {
+  height:50%;
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+  align-items: center;
+  color:#dedede;
+  font-size:20px;
+}
+
+.user-nickname {
+  height:25%;
+}
+.user-crew {
+  height:25%;
+}
+
+.user-crew > a {
+  color:#dedede;
+}
+
+.user-edit {
+  height:25%;
+}
+
+.user-edit > a {
+  color:#dedede;
+}
+
+/*中央右*/
+.mypage-right-contents {
+  width:calc(100% - 300px);
+  padding:0 20px;
+  height:100%;
+}
+
+
+.user-remark {
+  height:100px;
+  background-color:#777;
+}
+.user-places {
+  height:100%;
+  overflow: scroll;
+}
+
+.user-places-title {
+  font-size:32px;
+  font-weight:bold;
+  position: relative;
+  padding:8px;
+  margin-bottom:24px;
+  text-align: center;
+  color:#fff;
+}
+
+.user-places-title:before {
+  position: absolute;
+  bottom: -5px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 5px;
+  content: '';
+  border-radius: 3px;
+  background: red;
+}
+
+.user-place {
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  width:100%;
+  height:100%;
+  border:1px solid #dedede;
+  background-color:rgba(0,0,0,0.3);
+}
+
+.mypage-main-content-right-lower {
+  width:70%;
+  height:50%;
+  padding:25px;
+  margin:0 auto;
+}
+
+.mypage-lower-explain-title {
+  color: #FFFFFF;
+  font-family: "Poppins", Poppins;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom:10px;
+}
+
+.mypage-place-show {
+  display:flex;
+  justify-content:space-between;
+  width:50%;
+  height:50%;
+  border:1px solid #dedede;
+  background-color:rgba(0,0,0,0.3);
+}
+
+.mypage-item-box {
+  height: 50%;
+  width: 80%;
+  background-color: rgba(0, 0, 0,0);
+}
+
+.mypage-place-show-left{
+  width:40%;
+  height:100%;
+  display:flex;
+  justify-content: center;
+  flex-direction:column;
+  align-items: center;
+  border-right:1px solid #dedede;
+}
+
+.mypage-place-content-list {
+  padding:5px ;
+  color: #404040;
+  border-left: solid 6px #1fa67a;
+  border-right: solid 6px #fafafa;
+  border-bottom: solid 2px #dadada;
+  background: #fafafa;
+  margin: 5px;
+  line-height: 1.5;
+  font-weight: bold;
+  height:20%;
+}
+
+.mypage-place-show-right{
+  width:60%;
+  border-left:1px solid #dedede;
+  display:flex;
+  justify-content: center;
+  flex-direction:column;
+  align-items: center;
+}
+
+.mypage-detail-table {
+  width: 90%;
+  height:100%;
+  padding:20px 0;
+}
+
+.mypage-new-place  {
+  display:inline-block;
+  font-weight:bold;
+  background-color: #fff100;
+  border-bottom: 5px solid #ccc100;
+  padding:8px 8px;
+  text-align: center;
+}
+
+.mypage-new-place:hover {
+  margin-top: 3px;
+  background: #fff20a;
+  border-bottom: 2px solid #ccc100;
+}
+
+.mypage-detail-table {
+  width: 90%;
+  height:100%;
+  padding:20px 0;
+}
+
+.mypage-detail-value-remark {
+  background-color: #337079;
+  width: 80%;
+  max-height:80px;
+  padding: 5px;
+  border: 1px solid #dedede;
+  font-size: 10px;
+  color:#FFF;
+  overflow: scroll;
+
+}

@@ -47,6 +47,10 @@
 .account-page .field {
   margin-bottom: 10px;
 }
+.edit-image-form {
+  margin:0 auto;
+  width:50%;
+}
 .account-page .field .field-label {
   padding: 10px 0;
   letter-spacing: 1px;

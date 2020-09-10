@@ -8,7 +8,7 @@
     <div class= "side-header">
       <% if user_signed_in? %>
         <div class="user-name">
-        <%= link_to  edit_user_path(current_user) do  %>
+        <%= link_to user_path(current_user) do  %>
           <%= current_user.nickname%>
         <% end %>
         </div>
@@ -74,6 +74,17 @@
       <div id='messages' class="message-contents">
         <% @messages.reverse_each do |message| %>
           <div class="message-content">
+            <div class="message-icon">
+              <% if message.user.image.attached?%>
+                <%= link_to user_path(message.user) do%>
+                  <%= image_tag message.user.image ,class:"message-user-icon"%>
+                <% end %>
+              <% else %>
+                <%= link_to user_path(message.user) do%>
+                  <%= image_tag ("default_place.png") ,class:"message-user-icon" %>
+                <% end %>
+              <% end %>
+            </div>
             <div class="message-name">
               <p><%= message.user.nickname %></p>
             </div>
