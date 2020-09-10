@@ -1,5 +1,7 @@
 .new-contents {
-  background-color: #f1f1f1;
+  background-image: url("<%= asset_path('default_user.jpg') %>");
+  background-size: cover;
+  background-position: center;
   height:100%;
   width:100%;
 }
@@ -8,7 +10,6 @@
   width:800px;
   height:100%;
   margin: 0 auto;
-  background-color:#fff;
 }
 
 .content {
@@ -19,6 +20,9 @@
   align-items:center;
   padding-top:20px;
   height:100%;
+  color:white;
+  font-weight:bold;
+  background-color:rgba(0,0,0,0.3);
 }
 
 .new-name {
@@ -181,14 +185,14 @@
 
 .content > a {
   color: #000;
-  background-color:rgba(51,112,121,20%);
-  border-bottom: 5px solid rgba(51,112,121,40%);
+  background-color:#79CF9F;
+  border-bottom: 5px solid #3BB26F;
   margin-bottom:10px;
 }
 
 .content > a:hover {
   margin-top: 3px;
   color: #000;
-  background-color:rgba(51,112,121,20%);
-  border-bottom: 2px solid rgba(51,112,121,40%);
+  background-color:#79CF9F;
+  border-bottom: 2px solid #3BB26F;
 }

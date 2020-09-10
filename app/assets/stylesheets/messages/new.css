@@ -77,10 +77,10 @@
 
 .place-content-list {
   padding:20px 10px 10px;
-  color: #404040;
+  color: #fafafa;
   border-left: solid 6px #1fa67a;
   border-bottom: solid 2px #dadada;
-  background: #fafafa;
+  background-color:rgba(200,200,200,60%);
   margin-bottom: 10px;
   line-height: 1.5;
   list-style-type: none;
@@ -103,7 +103,7 @@
 }
 
 .main-header {
-  background-color:rgba(51,112,121,5%);
+  background-color:rgba(51,112,121,20%);
   height:100px;
   padding:0 40px;
   display:flex;
@@ -130,7 +130,7 @@
 }
 
 .main-main {
-  background-color:rgba(51,112,121,15%);
+  background-color:rgba(51,112,121,35%);
   height:calc(100% - 190px);
   padding:46px 40px 0;
   overflow: scroll;
@@ -179,7 +179,7 @@
 
 .form {
   /* background-color:#ddd; */
-    background-color:rgba(51,112,121,25%);
+    background-color:rgba(51,112,121,55%);
   height:90px;
   padding:20px 40px;
   display: flex;
