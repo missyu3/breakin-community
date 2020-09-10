@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     post '/users/guest_sign_in', to: 'users/sessions#new_guest'
   end
   root "places#index"
-  resources :users, only: [:edit,:update]
+  resources :users, only: [:edit,:update, :show]
   resources :places, except: [:show] do
     resources :messages, only: [:new, :create]
   end
