@@ -8,7 +8,7 @@
 ・また、練習場所ごとの掲示板を使用して一緒に練習する新しい仲間を作ることもできます。
 
 ## App URL
-https://breakin-community.herokuapp.com/
+https://breakin-community.herokuapp.com/ <br>
 http://54.249.2.5/
 
 ## 制作背景
