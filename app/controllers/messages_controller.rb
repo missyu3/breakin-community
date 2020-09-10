@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   def new
     @message = Message.new
     @place = Place.find(params[:place_id])
-    @messages = @place.messages.all
+    @messages = @place.messages.includes(:user)
     @user_place = UserPlace.new
     @user_places = UserPlace.all
   end
