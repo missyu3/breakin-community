@@ -1,0 +1,88 @@
+<%= render "shared/header" %>
+<div class="mypage-wrapper">
+  <div class= "mypage-left-contents">
+    <div class= "user-image">
+      <%# if user.image.attached?%>
+
+      <%# else %>
+          <%= image_tag ("IMG_9789.JPG") ,class:"user-icon" %>
+      <%# end %>
+    </div>
+    <div class= "user-profile">
+      <div class= "user-nickname">
+        <%= @user.nickname%>
+      </div>
+      <% if current_user.id == @user.id  %>
+        <div class= "user-crew">
+          <%= link_to "メッセージを確認する"%>
+        </div>
+        <div class= "user-edit">
+          <%= link_to "プロフィールを編集する", edit_user_path(id: current_user.id), method: :get%>
+        </div>
+      <% else %>
+        <div class= "user-crew">
+          <%= link_to "#{@user.nickname}とのメッセージページへ"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class = "mypage-right-contents">
+    <%# if @user.remark != nil %>
+      <%#<div class="user-remark">
+        <%#= @user.remark %>
+      <%#</div>
+    <%# end %>
+    <div class="user-places">
+      <div class="user-places-title">
+        良く使う練習場所
+      </div>
+      <div class="user-place">
+        <% @user_places.each do |user_place|%>
+          <% if user_place.user_id == @user.id%>
+            <div class="mypage-place-show" id="placeShow">
+              <div class="mypage-place-show-left">
+                <% if user_place.place.image.attached?%>
+                  <div class="mypage-item-box">
+                    <%= image_tag user_place.place.image ,class:"item-box-img" %>
+                  </div>
+                <% else %>
+                  <div class="mypage-item-box">
+                    <%= image_tag ("default_place.png") ,class:"item-box-img" %>
+                  </div>
+                <% end %>
+                <div class="mypage-place-content-list">
+                  <p>チャット参加人数：</p>
+                  <p class= "place-info"><%= "#{@user_places.where(place_id: user_place.place.id).count}人"%></p>
+                </div>
+                <%= link_to "チャットページへ", new_place_message_path(user_place.place) ,class:"mypage-new-place" %>
+              </div>
+              <div class="mypage-place-show-right">
+                <table class="mypage-detail-table">
+                  <tbody>
+                    <tr>
+                      <th class="detail-item">場所名</th>
+                      <td class="detail-value"><%= user_place.place.name %></td>
+                    </tr>
+                    <tr>
+                      <th class="detail-item">住所</th>
+                      <td class="detail-value"><%= user_place.place.address %></td>
+                    </tr>
+                    <tr>
+                      <th class="detail-item">金額</th>
+                      <td class="detail-value"><%= user_place.place.price %></td>
+                    </tr>
+                    <tr>
+                      <th class="detail-item-remark">備考</th>
+                      <td class="mypage-detail-value-remark"><%= user_place.place.remark %></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %> 
