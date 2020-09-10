@@ -4,6 +4,7 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.all
+    @user_places = UserPlace.all
   end
 
   def new
