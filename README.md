@@ -9,7 +9,7 @@
 
 ## App URL
 https://breakin-community.herokuapp.com/ <br>
-http://breakin-community.com/
+https://breakin-community.com/
 
 ## 制作背景
 大学からブレイクダンスに没頭し、社会人でも続けていましたが、<br>
@@ -31,7 +31,7 @@ http://breakin-community.com/
 ## 本番環境
 <dl>
   <dt>インフラ</dt>
-  <dd>AWS( EC2 / Route53 ) / heroku
+  <dd>AWS( EC2 / S3 / Route53 / ALB ) / heroku
   
   <dt>フロントエンド</dt>
   <dd>JavaScript / HTML / CSS</dd>
@@ -58,7 +58,7 @@ http://breakin-community.com/
 レスポンシブデザイン
 結合テストコード
 docker
-AWS(RDS / CloudFront / ELB)
+AWS(RDS)
 
 ## 機能一覧
 <dl>
