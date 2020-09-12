@@ -83,6 +83,10 @@ header {
   transform: translateY(-50%)
 }
 
+.br {
+  display:none;
+}
+
 .notice {
   background-color:rgba(51,112,121,25%);
   padding-left:20px;
@@ -147,4 +151,9 @@ footer {
   .header-list > a {
   font-size:15px;
   }
+
+  .br {
+  display:inline;
+}
+
 }
