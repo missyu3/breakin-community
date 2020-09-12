@@ -23,27 +23,17 @@ header {
   width: 500px;
   box-sizing: border-box;
   display: flex;
+  text-align:center;
+  position:relative;
 }
-
-.header-logo > img {
-  width: 90px;
-  height: 90px;
-  padding-top: 5px;
-}
-
-// .header-title {
-//   font-family: 'Bangers', cursive;
-//   font-size: 32px;
-//   line-height: 100px;
-//   width: 300px;
-// }
 
 .header-title {
   font-size: 40px;
   font-style: italic;
   letter-spacing: .1em;
   text-shadow: -4px 3px 0 #fa4141, -8px 6px 0 #000;
-  line-height: 100px
+  position:absolute;
+  top:25%;
 }
 
 .header-title > a {
@@ -78,6 +68,7 @@ header {
   font-weight: bold;
   text-align:center;
   position:relative;
+
 }
 
 .header-list > a {
@@ -90,6 +81,10 @@ header {
   right:0;
   -webkit-transform : translateY(-50%);
   transform: translateY(-50%)
+}
+
+.br {
+  display:none;
 }
 
 .notice {
@@ -123,4 +118,42 @@ footer {
   letter-spacing: .1em;
   text-shadow: -4px 3px 0 #fa4141, -8px 6px 0 #000;
   color:#fff;
+}
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 599px) {
+  .header-contents {
+  width: 100%;
+  }
+ .header-title {
+  font-size: 15px;
+ } 
+ .header-logo {
+   width:40%;
+ }
+
+ .header-container {
+  width: 60%;
+  }
+
+ .header-container-contents {
+  display: inline-block;
+  width: 100%;
+  }
+
+  .header-container-contents > ul {
+    width:100%;
+  }
+
+  .header-list > a {
+  font-size:15px;
+  }
+
+  .br {
+  display:inline;
+}
+
 }

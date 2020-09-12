@@ -17,11 +17,11 @@
       </div>
       <% end %>
       <div class="direction">
-        <div class="sample btn" ><span class="sample">北海道</span>方面はこちら</div>
-        <div class="sample btn" ><span class="sample">仙台</span>方面はこちら</div>
-        <div class="sample btn" ><span class="sample">東京</span>方面はこちら</div>
-        <div class="sample btn"><span >大阪</span>方面はこちら</div>
-        <div class="sample btn"><span class="sample">九州</span>方面はこちら</div>
+        <div class="sample btn" ><span class="sample">北海道</span><br class="br">方面</div>
+        <div class="sample btn" ><span class="sample">仙台</span><br class="br">方面</div>
+        <div class="sample btn" ><span class="sample">東京</span><br class="br">方面</div>
+        <div class="sample btn"><span >大阪</span><br class="br">方面</div>
+        <div class="sample btn"><span class="sample">九州</span><br class="br">方面</div>
       </div>
     </div>
     <div class="main-contents-right">
@@ -54,7 +54,7 @@
                 </div>
               <% end %>
                 <div class="mypage-place-content-list">
-                  <p>チャット参加人数：</p>
+                  <p>チャット<br class="br">参加人数：</p>
                   <p class= "place-info"><%= "#{@user_places.where(place_id: place.id).count}人"%></p>
                 </div>
                 <%= link_to "チャットページへ", new_place_message_path(place) ,class:"mypage-new-place" %>

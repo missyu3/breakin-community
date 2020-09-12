@@ -20,7 +20,9 @@
             <%= link_to "ログイン", new_user_session_path, method: :get %>
           </div>
           <div class="header-list">
-            <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post %>
+            <%= link_to users_guest_sign_in_path, method: :post  do %>
+              ゲスト<br class="br">ログイン
+            <% end %>
           </div>
           <% end %>
         </ul>          
