@@ -9,7 +9,7 @@
 
 ## App URL
 https://breakin-community.herokuapp.com/ <br>
-(今後AWSを用いてデプロイ予定)
+http://breakin-community.com/
 
 ## 制作背景
 大学からブレイクダンスに没頭し、社会人でも続けていましたが、<br>
