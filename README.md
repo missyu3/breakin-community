@@ -31,7 +31,7 @@ http://breakin-community.com/
 ## 本番環境
 <dl>
   <dt>インフラ</dt>
-  <dd>AWS( EC2 ) / heroku
+  <dd>AWS( EC2 / Route53 ) / heroku
   
   <dt>フロントエンド</dt>
   <dd>JavaScript / HTML / CSS</dd>
@@ -58,7 +58,7 @@ http://breakin-community.com/
 レスポンシブデザイン
 結合テストコード
 docker
-AWS(RDS / Route53 / CloudFront / ELB)
+AWS(RDS / CloudFront / ELB)
 
 ## 機能一覧
 <dl>
