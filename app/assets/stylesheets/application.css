@@ -102,19 +102,14 @@ select {
 
 .error-alert {
   padding:10px;
-  background-color: rgba(0,0,0,0.3);
 }
 .error-alert > ul {
   margin:10px auto;
   width:80%;
-  border:1px solid #dedede;
+  border:1px solid #337079;
 }
 
 input[type="submit" i] {
   border:none;
   border-bottom: 5px solid #ccc100;
-}
-
-.error-message {
-  color:white;
 }
