@@ -20,9 +20,8 @@ class MessagesController < ApplicationController
   end
 
   private
+
   def params_message
     params.require(:message).permit(:text).merge(user_id: current_user.id, place_id: params[:place_id])
   end
-
-  
 end
