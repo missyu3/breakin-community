@@ -126,34 +126,28 @@ footer {
 
 @media (max-width: 599px) {
   .header-contents {
-  width: 100%;
+    width: 100%;
   }
  .header-title {
-  font-size: 15px;
- } 
+    font-size: 15px;
+  } 
  .header-logo {
-   width:40%;
+    width:40%;
  }
-
  .header-container {
-  width: 60%;
+    width: 60%;
   }
-
  .header-container-contents {
-  display: inline-block;
-  width: 100%;
+    display: inline-block;
+    width: 100%;
   }
-
   .header-container-contents > ul {
     width:100%;
   }
-
   .header-list > a {
-  font-size:15px;
+    font-size:15px;
   }
-
   .br {
-  display:inline;
+    display:inline;
   }
-
 }
