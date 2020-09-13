@@ -1,6 +1,6 @@
 # Breakin'-Community
 
-![result](https://user-images.githubusercontent.com/64772703/92210046-ffc21200-eec8-11ea-9d79-547c58767d1c.gif)
+![result](https://user-images.githubusercontent.com/64772703/93018784-41f7fb80-f60d-11ea-81d4-8d09e6315348.gif)
 ## 概要
 現在ポートフォリオとして作成中の<br>
 ブレイクダンスの練習場所を共有できるコミュニティ型のアプリケーションです！<br><br>
