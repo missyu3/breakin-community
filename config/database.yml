@@ -51,6 +51,6 @@ production:
   <<: *default
   database: breakin_community_production
   username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  password: <%= ENV['RDSDATABASE_PASSWORD'] %>
+  host: <%= ENV['RDSDATABASE_HOST'] %>
   socket: /var/lib/mysql/mysql.sock
-
