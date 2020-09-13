@@ -8,7 +8,6 @@
 ・また、練習場所ごとの掲示板を使用して一緒に練習する新しい仲間を作ることもできます。
 
 ## App URL
-https://breakin-community.herokuapp.com/ <br>
 https://breakin-community.com/
 
 ## 制作背景
@@ -31,7 +30,7 @@ https://breakin-community.com/
 ## 本番環境
 <dl>
   <dt>インフラ</dt>
-  <dd>AWS( EC2 / S3 / Route53 / ALB ) / heroku
+  <dd>AWS( EC2 / S3 / Route53 / ALB / RDS )
   
   <dt>フロントエンド</dt>
   <dd>JavaScript / HTML / CSS</dd>
@@ -41,7 +40,7 @@ https://breakin-community.com/
   <dd>Ruby 2.6.5 / Rails 6.0.3.2
 
   <dt>データベース</dt>
-  <dd>MySQL5.6.47</dd>Redis
+  <dd>MySQL5.6.47</dd>
   <dd>Redis</dd>
   
   <dt>Webサーバ</dt>
@@ -55,10 +54,8 @@ https://breakin-community.com/
 </dl>
 
 ## 課題や今後実装したい機能
-レスポンシブデザイン
 結合テストコード
 docker
-AWS(RDS)
 
 ## 機能一覧
 <dl>
