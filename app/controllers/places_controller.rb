@@ -1,6 +1,6 @@
-class PlacesController < ApplicationController 
+class PlacesController < ApplicationController
   before_action :find_place, only: [:show, :edit, :update, :destroy]
-  before_action :move_to_session, only:[:new, :edit, :destroy]
+  before_action :move_to_session, only: [:new, :edit, :destroy]
 
   def index
     @places = Place.all
@@ -20,10 +20,10 @@ class PlacesController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
   end
-  
+
   def update
     if @place.update(params_place)
       redirect_to root_path
@@ -39,12 +39,11 @@ class PlacesController < ApplicationController
       render :show
     end
   end
-  
-
 
   private
+
   def params_place
-    params.require(:place).permit(:image, :name, :address, :remark, :price, user_ids:[])
+    params.require(:place).permit(:image, :name, :address, :remark, :price, user_ids: [])
   end
 
   def find_place
