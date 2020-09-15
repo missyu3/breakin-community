@@ -45,7 +45,7 @@
             <p>備考 : </p><p class= "place-info"><%= @place.remark%></p>
         </div>
         <div class="place-content-list">
-            <p>このチャットの参加人数 : </p><p class= "place-info"><%= "#{@user_places.where(place_id: @place.id).count}人"%></p>
+            <p>参加人数 : </p><p class= "place-info"><%= "#{@user_places.where(place_id: @place.id).count}人"%></p>
         </div>
       </div>
     </div>
