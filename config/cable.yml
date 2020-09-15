@@ -14,3 +14,4 @@ production:
   adapter: redis
   port: 6379
   url: <%= ENV['ELASTICACHE_REDIS_URL'] %>
+  channel_prefix: breakin_community_production
