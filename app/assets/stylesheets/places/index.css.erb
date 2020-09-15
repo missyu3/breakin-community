@@ -43,7 +43,7 @@
 }
 
 #target {
-  width: 750px;
+  width: 90%;
   height: 400px;
 }
 
@@ -153,12 +153,10 @@ a {
   padding:20px 0;
 }
 
-.item-box {
-  height: 100%;
-  width: 100%;
+.mypage-item-box {
+  height: 50%;
+  width: 80%;
   background-color: rgba(0, 0, 0,0);
-  margin-left:20px;
-
 }
 .item-box-img {
   height: 100%;
@@ -174,7 +172,7 @@ a {
 .detail-table {
   width: 100%;
   height:100%;
-  padding:20px 0;
+  padding:5px 0;
 }
 
 .detail-item {
@@ -252,6 +250,51 @@ a {
   display:none;
 }
 
+@media (max-width: 1024px) {
+  .main-contents-left {
+    width:55%;
+  }
+  #address {
+    width:60%;
+  }
+  .main-contents-right{
+    width:45%;
+    margin-right:10px;
+  }
+  .main-content-right-upper{
+    width:95%;
+    height:30%;
+  }
+  .upper-explain-title {
+    font-size:20px;
+  }
+  .explain-content {
+    font-size:14px;
+  }
+  .main-content-right-middle{
+    height:50%;
+    padding:0;
+  }
+  .mypage-item-box {
+    width:100%;
+  }
+  .mypage-place-show-left {
+    font-size:10px;
+  }
+  .place-show-right {
+    margin:0;
+  }
+  .main-content-right-lower{
+    height:20%;
+    width:100%;
+  }
+  .lower-explain-title {
+    font-size:20px;
+  }
+  .new-place {
+    font-size:14px;
+  }
+}
 @media (max-width: 599px) {
   .main {
     height:100%;
@@ -261,7 +304,7 @@ a {
     width:100%;
   }
   #target {
-    width:100%;
+    width:95%;
   }
   .search {
     display:flex;
@@ -272,11 +315,12 @@ a {
   }
   .main-contents-right{
     width:100%;
-    height:500px;
+    height:100%;
   }
   .main-content-right-upper{
-    width:90%;
+    width:85%;
     height:20%;
+    padding-bottom:10px;
   }
   .upper-explain-title {
     font-size:20px;
@@ -287,6 +331,23 @@ a {
   }
   .main-content-right-middle{
     height:60%;
+  }
+  .mypage-place-show-left {
+    font-size:10px;
+  }
+  .place-show-right {
+    margin:0;
+  }
+  .main-content-right-lower{
+    height:20%;
+    width:85%;
+    padding-bottom:5px;
+  }
+  .lower-explain-title {
+    font-size:20px;
+  }
+  .new-place {
+    font-size:20px;
   }
   .mypage-place-show-left {
     font-size:10px;
