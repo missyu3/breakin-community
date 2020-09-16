@@ -20,19 +20,17 @@ https://breakin-community.com/
   レスポンシブデザイン
 
 ## 使用技術
-<dl>
-  <dt>AWS( EC2 / S3 / Route53 / ALB / RDS / ElastiCache )<dt>
-  <dt>JavaScript</dt>
-  <dt>Ruby 2.6.5</dt>
-  <dt>Rails 6.0.3.2<dt>
-  <dt>MySQL5.6.47</dt>
-  <dt>Redis</dt>
-  <dt>Nginx</dt>
-  <dt>Unicorn</dt>
-  <dt>Rubocop / Rspec / Capistrano</dt>
-  <dt>Google API ( Maps Javascript API / Geocoding API )
-  <dt>Git / GitHub</dt>
-</dl>
+  AWS( EC2 / S3 / Route53 / ALB / RDS / ElastiCache )<br>
+  JavaScript<br>
+  Ruby 2.6.5<br>
+  Rails 6.0.3.2<br>
+  MySQL5.6.47<br>
+  Redis<br>
+  Nginx<br>
+  Unicorn<br>
+  Rubocop / Rspec / Capistrano<br>
+  Google API ( Maps Javascript API / Geocoding API )<br>
+  Git / GitHub
 
 ## 課題や今後実装したい機能
 結合テストコード
