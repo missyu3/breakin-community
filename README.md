@@ -29,31 +29,17 @@ https://breakin-community.com/
 また、ユーザーの使いやすさを重視して、検索機能や日本の各地点に飛べるリンクを作成したり、<br>
 トップページで詳細を表示させることでその練習場所に興味を持ってもらえるようにしています。
 
-## 本番環境
+## 使用技術
 <dl>
-  <dt>インフラ</dt>
-  <dd>AWS( EC2 / S3 / Route53 / ALB / RDS / ElastiCache )
-  
-  <dt>フロントエンド</dt>
-  <dd>JavaScript / HTML / CSS</dd>
-  
-  
-  <dt>バックエンド</dt>
-  <dd>Ruby 2.6.5 / Rails 6.0.3.2
-
-  <dt>データベース</dt>
-  <dd>MySQL5.6.47</dd>
-  <dd>Redis</dd> 
-  <dd>RDS</dd> 
-  
-  <dt>Webサーバ</dt>
-  <dd>Nginx</dd>
-  
-  <dt>APサーバ</dt>
-  <dd>Unicorn</dd>
-  
-  <dt>テスト/デプロイ</dt>
-  <dd>Rubocop / Rspec / Capistrano</dd>
+  <dt>AWS( EC2 / S3 / Route53 / ALB / RDS / ElastiCache )<dt>
+  <dt>JavaScript</dt>
+  <dt>Ruby 2.6.5</dt>
+  <dd>Rails 6.0.3.2<dt>
+  <dt>MySQL5.6.47</dt>
+  <dt>Redis</dt>
+  <dt>Nginx</dt>
+  <dt>Unicorn</dt>
+  <dt>Rubocop / Rspec / Capistrano</dt>
 </dl>
 
 ## 課題や今後実装したい機能
