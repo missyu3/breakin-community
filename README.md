@@ -34,7 +34,7 @@ https://breakin-community.com/
   <dt>AWS( EC2 / S3 / Route53 / ALB / RDS / ElastiCache )<dt>
   <dt>JavaScript</dt>
   <dt>Ruby 2.6.5</dt>
-  <dd>Rails 6.0.3.2<dt>
+  <dt>Rails 6.0.3.2<dt>
   <dt>MySQL5.6.47</dt>
   <dt>Redis</dt>
   <dt>Nginx</dt>
