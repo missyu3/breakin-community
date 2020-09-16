@@ -32,7 +32,7 @@ https://breakin-community.com/
 ## 本番環境
 <dl>
   <dt>インフラ</dt>
-  <dd>AWS( EC2 / S3 / Route53 / ALB / RDS )
+  <dd>AWS( EC2 / S3 / Route53 / ALB / RDS / ElastiCache )
   
   <dt>フロントエンド</dt>
   <dd>JavaScript / HTML / CSS</dd>
@@ -43,13 +43,14 @@ https://breakin-community.com/
 
   <dt>データベース</dt>
   <dd>MySQL5.6.47</dd>
-  <dd>Redis</dd>
+  <dd>Redis</dd> 
+  <dd>RDS</dd> 
   
   <dt>Webサーバ</dt>
   <dd>Nginx</dd>
   
   <dt>APサーバ</dt>
-  <dd>Puma</dd>
+  <dd>Unicorn</dd>
   
   <dt>テスト/デプロイ</dt>
   <dd>Rubocop / Rspec / Capistrano</dd>
