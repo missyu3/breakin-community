@@ -41,7 +41,6 @@
 .account-page .account-page__header .btn {
   margin-top: 20px;
   color: #fff;
-  background-color: #ccc;
   font-size: 14px;
 }
 .account-page .field {
@@ -86,6 +85,9 @@
   margin-top: 20px;
   color: #fff;
   background-color: #38aef0;
+}
+.account-page input[type=submit]:hover {
+  background-color:rgba(56,174,240, 80%);
 }
 .account-page .field-label .field_with_errors {
   display: inline-block;
