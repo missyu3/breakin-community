@@ -132,6 +132,7 @@ footer {
   border-top:1px solid #fff;
 }
 
+
 .domain {
   height: 50px;
   text-align: center;
@@ -141,6 +142,11 @@ footer {
   letter-spacing: .1em;
   text-shadow: -4px 3px 0 #fa4141, -8px 6px 0 #000;
   color:#fff;
+}
+.domain:hover {
+  color:#f1f1f1;
+  text-shadow: -4px 3px 0 #2ecc71, -8px 6px 0 #000;
+  transition-duration: 1s;
 }
 
 @media (max-width: 1024px) {
