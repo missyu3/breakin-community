@@ -8,7 +8,7 @@ function initMap() {
   // id=targetにGoogleマップ作成し東京を描画する
   const map = new google.maps.Map(target, {
     center: tokyo,
-    zoom: 8,
+    zoom: 9,
     clickableIcons: false
   });
   // 東京にマーカーを立てる
@@ -66,10 +66,8 @@ function initMap() {
             return;
           }
           if (results[0]) {
-            new google.maps.Map(target, {
-              center: results[0].geometry.location,
-              zoom: 7
-            })
+              map.panTo(results[0].geometry.location);
+              map.setZoom(7);
           } else {
             alert('No results found');
             return;
@@ -129,10 +127,8 @@ function initMap() {
         return;
       }
       if (results[0]) {
-        new google.maps.Map(target, {
-          center: results[0].geometry.location,
-          zoom: 9
-        })
+        map.panTo(results[0].geometry.location);
+        map.setZoom(10);
       } else {
         alert('No results found');
         return;
