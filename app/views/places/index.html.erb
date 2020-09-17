@@ -3,10 +3,10 @@
     <div class="main-contents-left">
       <div class="place">練習場所一覧</div>
       <div id="target"></div>
-      <div class= "search">
+      <form class= "search">
         <input type="text" id="address">
-        <p id="search">Search</p>
-      </div>
+        <input type=submit id="search" onClick="return false;" value="Search">
+      </form>
       <% @places.each do |place|%>
       <div class= "practicePlace hidden"><%= place.address%></div>
       <div class= "practiceName hidden"></div>
