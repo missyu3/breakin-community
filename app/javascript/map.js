@@ -66,8 +66,8 @@ function initMap() {
             return;
           }
           if (results[0]) {
-              map.setCenter(results[0].geometry.location);
-              map.setZoom(6);
+              map.panTo(results[0].geometry.location);
+              map.setZoom(7);
           } else {
             alert('No results found');
             return;
@@ -127,7 +127,7 @@ function initMap() {
         return;
       }
       if (results[0]) {
-        map.setCenter(results[0].geometry.location);
+        map.panTo(results[0].geometry.location);
         map.setZoom(10);
       } else {
         alert('No results found');
