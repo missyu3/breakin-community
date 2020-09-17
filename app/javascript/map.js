@@ -129,10 +129,8 @@ function initMap() {
         return;
       }
       if (results[0]) {
-        new google.maps.Map(target, {
-          center: results[0].geometry.location,
-          zoom: 9
-        })
+        map.setCenter(results[0].geometry.location);
+        map.setZoom(10);
       } else {
         alert('No results found');
         return;
