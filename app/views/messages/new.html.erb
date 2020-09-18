@@ -63,6 +63,8 @@
           <% if @user_places.where(place_id: @place.id).order(created_at: :asc).first == @user_places.where(user_id: current_user, place_id: @place.id).first %>
             <%= link_to "編集", edit_place_path(@place), method: :get %>
             <%= link_to "削除", place_path(@place), method: :delete  %>
+          <% else %>
+            <%= link_to "チャットから抜ける" , user_place_path(@place), method: :delete %>
           <% end %>
           <%#最初にこの練習場所を登録した人のみが編集と削除ができる%>
         <% end %>
@@ -81,7 +83,7 @@
                 <% end %>
               <% else %>
                 <%= link_to user_path(message.user) do%>
-                  <%= image_tag ("default_place.png") ,class:"message-user-icon" %>
+                  <%= image_tag ("dancer.png") ,class:"message-user-icon" %>
                 <% end %>
               <% end %>
             </div>
