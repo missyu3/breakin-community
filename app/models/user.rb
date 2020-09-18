@@ -6,7 +6,7 @@ class User < ApplicationRecord
   end
   has_many :user_places, dependent: :destroy
   has_many :places, through: :user_places
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_one_attached :image
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
