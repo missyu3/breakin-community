@@ -4,7 +4,7 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :nickname, length: { maximum: 15 }
   end
-  has_many :user_places
+  has_many :user_places, dependent: :destroy
   has_many :places, through: :user_places
   has_many :messages
   has_one_attached :image
