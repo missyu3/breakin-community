@@ -33,8 +33,9 @@ class PlacesController < ApplicationController
   end
 
   def destroy
+    @place = Place.find_by(id: params[:id])
     if @place.destroy
-      redirect_to :index
+      redirect_to root_path
     else
       render :show
     end

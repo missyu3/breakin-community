@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   resources :places, except: [:show] do
     resources :messages, only: [:new, :create]
   end
-  resources :user_places, only: :create
+  resources :user_places, only: [:create, :destroy]
 end
