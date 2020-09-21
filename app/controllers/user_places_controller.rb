@@ -9,6 +9,15 @@ class UserPlacesController < ApplicationController
     end
   end
 
+  def destroy
+    @user_place =UserPlace.find_by(user_id: current_user.id, place_id: params[:id])
+    if @user_place.destroy
+    redirect_to root_path
+    else 
+      render :create
+    end
+  end
+
   private
 
   def params_user_place
