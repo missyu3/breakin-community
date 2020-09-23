@@ -24,17 +24,17 @@ RSpec.describe Place, type: :model do
     it 'nameが40文字より多いと登録できない' do
       @place.name = 'a' * 41
       @place.valid?
-      expect(@place.errors.full_messages).to include '名前は40文字以内で入力してください'
+      expect(@place.errors.full_messages).to include '名前は15文字以内で入力してください'
     end
     it 'addressが80文字より多いと登録できない' do
       @place.address = 'a' * 81
       @place.valid?
-      expect(@place.errors.full_messages).to include '住所は80文字以内で入力してください'
+      expect(@place.errors.full_messages).to include '住所は40文字以内で入力してください'
     end
     it 'priceが100文字より多いと登録できない' do
       @place.price = 'a' * 101
       @place.valid?
-      expect(@place.errors.full_messages).to include '金額は100文字以内で入力してください'
+      expect(@place.errors.full_messages).to include '金額は50文字以内で入力してください'
     end
     it 'addressがgooglemapに登録されている地点でないと登録できない' do
     end
