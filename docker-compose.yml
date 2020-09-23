@@ -1,6 +1,6 @@
 version: '3'
 volumes:
-  db-data:
+  mysql-data:
 
 services:
   web:
@@ -10,7 +10,7 @@ services:
     volumes:
       - '.:/breakin-community'
     environment:
-      - 'DATABASE_PASSWORD='
+      - 'DATABASE_PASSWORD=password'
     tty: true
     stdin_open: true
     depends_on:
@@ -19,16 +19,15 @@ services:
       - db
 
   db:
-    image: mysql
+    image: mysql:5.6
     volumes:
-      - 'db-data:/var/lib/mysql/data'
+      - 'mysql-data:/var/lib/mysql'
     environment:
       - 'MYSQL_DATABASE=breakin-community'
       - 'MYSQL_USER=root'
-      - 'MYSQL_PASSWORD=mshkhikomaro1121125'
-      - 'MYSQL_ROOT_PASSWORD=mshkhikomaro1121125'
-      - 'MYSQL_ALLOW_EMPTY_PASSWORD=mshkhikomaro1121125'
-      - 'MYSQL_RANDOM_ROOT_PASSWORD=mshkhikomaro1121125'
-
+      - 'MYSQL_PASSWORD=password'
+      - 'MYSQL_ROOT_PASSWORD=password'
+      - 'MYSQL_ALLOW_EMPTY_PASSWORD=password'
+      - 'MYSQL_RANDOM_ROOT_PASSWORD=password'
     ports:
-      - "3306:3306"
+      - "4306:3306"
