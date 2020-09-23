@@ -7,4 +7,4 @@ WORKDIR /breakin-community
 COPY Gemfile Gemfile.lock /breakin-community/
 
 RUN gem install bundler
-RUN bundle install
+RUN bundle install 
