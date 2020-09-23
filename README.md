@@ -22,7 +22,7 @@ https://breakin-community.com/
 ## 使用技術
   AWS( EC2 / S3 / Route53 / ALB / RDS / ElastiCache )<br>
   JavaScript<br>
-  Ruby 2.6.5<br>
+  Ruby 2.7.1<br>
   Rails 6.0.3.2<br>
   MySQL2<br>
   Redis<br>
@@ -31,10 +31,10 @@ https://breakin-community.com/
   Rubocop / Rspec / Capistrano<br>
   Google API ( Maps Javascript API / Geocoding API )<br>
   Git / GitHub
-
+  Docker / Docker-Compose
 ## 課題や今後実装したい機能
 結合テストコード
-docker
+CI / CDパイプライン
 
 ## 制作背景
 転勤や引っ越しがあっても趣味を続けやすくしたかったからです。<br>
