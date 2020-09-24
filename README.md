@@ -20,6 +20,7 @@ https://breakin-community.com/
   レスポンシブデザイン
 
 ## 使用技術
+  Travis CI<br>
   Docker / Docker-Compose<br>
   AWS( EC2 / S3 / Route53 / ALB / RDS / ElastiCache )<br>
   JavaScript<br>
