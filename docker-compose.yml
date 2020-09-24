@@ -24,6 +24,7 @@ services:
       - db
     depends_on:
       - db
+    env_file: my_env_file.env
 
 volumes:
   mysql-data:
