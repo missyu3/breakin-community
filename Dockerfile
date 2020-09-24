@@ -1,17 +1,10 @@
 FROM ruby:latest
 
 RUN apt-get update && \
-    apt-get install -y nodejs vim --no-install-recommends && \
+    apt-get install -y nodejs vim yarn --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
-
-RUN mkdir /myproject
-
-WORKDIR /myproject
-
-ADD Gemfile /myproject/Gemfile
-ADD Gemfile.lock /myproject/Gemfile.lock
+WORKDIR /breakin-community
+COPY Gemfile Gemfile.lock /breakin-community/
 
 RUN gem install bundler
-RUN bundle install
-
-ADD . /myproject
+RUN bundle install 
