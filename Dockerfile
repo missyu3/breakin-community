@@ -1,7 +1,7 @@
 FROM ruby:latest
 
 RUN apt-get update && \
-    apt-get install -y nodejs vim --no-install-recommends && \
+    apt-get install -y nodejs vim yarn --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 WORKDIR /breakin-community
 COPY Gemfile Gemfile.lock /breakin-community/
