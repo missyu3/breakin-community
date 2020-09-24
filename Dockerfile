@@ -1,4 +1,4 @@
-FROM ruby:2.6.5
+FROM ruby:latest
 
 RUN apt-get update && \
     apt-get install -y nodejs vim --no-install-recommends && \
