@@ -99,7 +99,9 @@
               <% end %>
             </div>
             <div class="message-name">
-              <p><%= message.user.nickname %></p>
+              <%= link_to user_path(message.user) do%>
+                <p><%= message.user.nickname %></p>
+              <% end %>
             </div>
             <div class="created-at">
               <p><%= message.created_at %></p>
