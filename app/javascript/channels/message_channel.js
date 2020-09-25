@@ -15,6 +15,22 @@ consumer.subscriptions.create("MessageChannel", {
     const nickName = `<p>${data.user.nickname}</p>`;
     const userIcon = document.getElementById('userIcon');
     const defaultIcon = document.getElementById('defaultIcon');
+    const currentUser =document.getElementById('currentUserId').textContent
+    const messageUser =data.user.id
+    function userInfo(){
+      if ( messageUser == currentUser) {
+        return "message-content-right"
+      } else {
+        return "message-content-left"
+      }
+    }
+    function userMessage(){
+      if ( messageUser == currentUser) {
+        return "lower-message-right"
+      } else {
+        return "lower-message-left"
+      }
+    }
     function icon(){
       if(defaultIcon === null){
         return userIcon
@@ -23,7 +39,7 @@ consumer.subscriptions.create("MessageChannel", {
       };
     }
     const HTML = `
-    <div class="message-content">
+    <div class=${userInfo()}>
       <div class="message-icon">
         <img src="${icon()["src"]}" class="message-user-icon">
       </div>
@@ -34,7 +50,7 @@ consumer.subscriptions.create("MessageChannel", {
         <p>${createdAt}</p>
       </div>
     </div>
-    <div class="lower-message">
+    <div class=${userMessage()}>
       <div class="text">
         <p>${text}</p>
       </div>
