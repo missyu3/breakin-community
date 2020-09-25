@@ -11,15 +11,20 @@
 .side-header {
   background-color:#337079;
   height:100px;
-  padding:0 20px;
+  padding:0 10px;
   display:flex;
-  justify-content:space-between;
+  justify-content:space-around;
   align-items:center;
+}
+
+.user-name {
+  width:30%;
+  display:flex;
 }
 
 .user-name > a {
   color:#fafafa;
-  font-size:20px;
+  font-size:10px;
   display:inline-block;
   max-width:150px;
   text-decoration:none;
@@ -39,6 +44,17 @@
 }
 .user-name > a:hover::after {
   width: 100%;
+}
+
+.header-message-icon {
+  height: 50%;
+  width: 18%;
+}
+.header-user-icon {
+    border-radius:50%;
+    border:1px solid #dedede;
+    height: 50%;
+    width: 30%;
 }
 
 .room-create > a {
