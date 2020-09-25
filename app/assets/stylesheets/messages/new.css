@@ -216,7 +216,11 @@
   margin:0 0 40px 0;
 }
 
-.message-content {
+.message-content-right {
+  display:flex;
+  justify-content: flex-end;
+}
+.message-content-left {
   display:flex;
 }
 
@@ -230,7 +234,12 @@
   border:1px solid #dedede;
 }
 
-.lower-message {
+.lower-message-right {
+  padding-bottom:20px;
+  display:flex;
+  justify-content: flex-end;
+}
+.lower-message-left {
   padding-bottom:20px;
 }
 
