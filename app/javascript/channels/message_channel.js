@@ -56,7 +56,7 @@ consumer.subscriptions.create("MessageChannel", {
       </div>
     </div>`
     const messages = document.getElementById('messages');
-    const newMessage = document.getElementById('message_text');
+    const newMessage = document.getElementById('textField');
     messages.insertAdjacentHTML('afterbegin', HTML);
     newMessage.value='';
   }
