@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :places, through: :user_places
   has_many :messages, dependent: :destroy
   has_one_attached :image, dependent: :destroy
+  has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
+  has_many :followings, through: :active_relationships, source: :follower
+  has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
+  has_many :followers, through: :passive_relationships, source: :following
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates :password, format: { with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください' }, allow_blank: true
@@ -17,5 +21,12 @@ class User < ApplicationRecord
       user.nickname = Faker::Name.name
       user.password = Faker::Internet.password(min_length: 6)
     end
+  end
+
+  def followed_by?(user)
+    passive_relationships.find_by(following_id: user.id).present?
+  end
+  def followered_by?(user)
+    active_relationships.find_by(follower_id: user.id).present?
   end
 end

@@ -1,0 +1,39 @@
+.user-follow {
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  width:100%;
+  height:20%;
+  border:1px solid #dedede;
+  background-color:rgba(0,0,0,0.3);
+}
+.mypage-follow {
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+  height:100%;
+  border:1px solid #dedede;
+  background-color:rgba(0,0,0,0.3);
+}
+.mypage-follow-left {
+  width:20%;
+  height:100%;
+  display:flex;
+  justify-content: center;
+  flex-direction:column;
+  align-items: center;
+}
+.mypage-follow-right {
+  width:80%;
+  height:100%;
+  display:flex;
+  justify-content: center;
+  flex-direction:column;
+  align-items: end;
+  border-right:1px solid #dedede;
+  color:#dedede;
+}
+.mypage-follow-right > a{
+  text-align: center;
+  color:#dedede;
+}

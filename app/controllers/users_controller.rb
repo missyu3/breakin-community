@@ -15,6 +15,25 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @user_places = UserPlace.all
+    @relationship = Relationship.all
+    @follow = @relationship.where(follower_id: params[:id]).count
+    @follower = @relationship.where(following_id: params[:id]).count
+  end
+  
+  def follows
+    @user = User.find(params[:id])
+    @users = @user.followers
+    @relationship = Relationship.all
+    @follow = @relationship.where(follower_id: params[:id]).count
+    @follower = @relationship.where(following_id: params[:id]).count
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @users = @user.followings
+    @relationship = Relationship.all
+    @follow = @relationship.where(follower_id: params[:id]).count
+    @follower = @relationship.where(following_id: params[:id]).count
   end
 
   private

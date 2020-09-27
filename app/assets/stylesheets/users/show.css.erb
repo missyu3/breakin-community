@@ -7,7 +7,7 @@
 }
 /*中央左*/
 .mypage-left-contents {
-  background-color:rgba(255,255,255,0.2);
+  background-color:rgba(0,0,0,0.3);
   height:100%;
   padding:20px 20px;
   width:300px;
@@ -37,46 +37,58 @@
   font-weight:bold;
 }
 
-.user-nickname {
-  height:40%;
-  font-size:30px;
-}
-.user-crew {
+.user-relationship, .user-crew, .user-about, .user-nickname, .user-edit {
   height:25%;
 }
 
-.user-crew > a {
-  display:inline-block;
-  color: #000;
-  background-color:#79CF9F;
-  border-bottom: 5px solid #3BB26F;
-  margin-bottom:10px;
+.user-relationship > a, .user-crew > a,.user-edit > a,.user-about > a, .user-nickname > a{
+  font-size: 10px;
+  text-decoration:none;
+  color:#dedede;
+  padding:10px;
+  position: relative;
+  width: 256px;
+  height: 64px;
+  line-height: 64px;
+  transition: all 0.3s;
+  span {
+    transition: all 0.3s;
+    tranform: scale(1, 1);
+  }
 }
 
-.user-crew > a:hover {
-  margin-top: 3px;
-  color: #000;
-  background-color:#79CF9F;
-  border-bottom: 2px solid #3BB26F;
+.user-relationship > a::before, .user-relationship > a::after, .user-crew > a::before, .user-crew > a::after , .user-edit > a::before, .user-edit > a::after, .user-about > a::before, .user-about > a::after {
+  content: '';
+  position: absolute;
+  transition: all 0.3s;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
-.user-edit {
-  height:25%;
+.user-relationship > a::before, .user-crew > a::before, .user-edit > a::before , .user-about > a::before {
+    z-index: 1;
+  
+  opacity: 0;
+  background: rgba(51, 112, 121, 0.5);
+  transform: scale(0.1, 1);
 }
 
-.user-edit > a {
-  display:inline-block;
-  color: #000;
-  background-color:#79CF9F;
-  border-bottom: 5px solid #3BB26F;
-  margin-bottom:10px;
+.user-relationship > a:hover::before, .user-crew > a:hover::before, .user-edit > a:hover::before, .user-about > a:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
 }
 
-.user-edit > a:hover {
-  margin-top: 3px;
-  color: #000;
-  background-color:#79CF9F;
-  border-bottom: 2px solid #3BB26F;
+.user-relationship > a::after, .user-crew > a::after, .user-edit > a::after, .user-about > a::after {
+  transition: all 0.3s;
+  border: 1px solid rgba(51, 112, 121, 0.5);
+}
+
+.user-relationship > a:hover::after, .user-crew > a:hover::after, .user-edit > a:hover::after, .user-about > a:hover::after {
+  transform: scale(1, .1);
+  opacity: 0;
 }
 
 /*中央右*/
