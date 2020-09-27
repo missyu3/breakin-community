@@ -14,17 +14,17 @@ https://breakin-community.com/
   ゲストログイン機能<br>
   練習場所管理機能<br>
   ActionCableを用いたリアルタイムチャット機能<br>
-  ユーザーマイページ機能<br>
+  フォロー機能<br>
   トップページにmapに登録された練習場所の一覧表示<br>
   トップページの練習場所をクリックすると詳細を非同期で表示<br>
   レスポンシブデザイン(スマホ・タブレット)
 
 ## 使用技術
-  Travis CI<br>
-  Docker / Docker-Compose<br>
   AWS( EC2 / S3 / Route53 / ALB / RDS / ElastiCache )<br>
+  Docker / Docker-Compose<br>
+  Travis CI<br>
   JavaScript<br>
-  Ruby 2.7.1<br>
+  Ruby 2.6.5<br>
   Rails 6.0.3.2<br>
   MySQL2<br>
   Redis<br>
