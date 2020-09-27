@@ -11,12 +11,12 @@ consumer.subscriptions.create("MessageChannel", {
 
   received(data) {
     const text = `<p>${data.content.text}</p>`;
-    const createdAt = `<p>${data.content.created_at}</p>`;
     const nickName = `<p>${data.user.nickname}</p>`;
     const userIcon = document.getElementById('userIcon');
     const defaultIcon = document.getElementById('defaultIcon');
     const currentUser =document.getElementById('currentUserId').textContent
     const messageUser =data.user.id
+    const date = new Date();
     function userInfo(){
       if ( messageUser == currentUser) {
         return "message-content-right"
@@ -24,6 +24,17 @@ consumer.subscriptions.create("MessageChannel", {
         return "message-content-left"
       }
     }
+    function toLocaleString( date )
+    {
+      return [
+          date.getFullYear(),
+          date.getMonth() + 1,
+          date.getDate()
+          ].join( '/' ) + ' '
+          + date.getHours() + ':'
+          + date.getMinutes()
+          ;
+    } 
     function userMessage(){
       if ( messageUser == currentUser) {
         return "lower-message-right"
@@ -47,7 +58,7 @@ consumer.subscriptions.create("MessageChannel", {
         <p>${nickName}</p>
       </div>
       <div class="created-at">
-        <p>${createdAt}</p>
+        <p>${toLocaleString(date)}</p>
       </div>
     </div>
     <div class=${userMessage()}>
