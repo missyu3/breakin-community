@@ -109,6 +109,15 @@ select {
   width:80%;
   border:1px solid #dedede;
 }
+.error-alert-user {
+  padding:10px 0;
+}
+.error-alert-user > ul {
+  margin:10px auto;
+  width:100%;
+  padding:0;
+  list-style:none;
+}
 
 input[type="submit" i] {
   border:none;

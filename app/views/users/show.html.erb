@@ -12,6 +12,9 @@
       <div class= "user-nickname">
         <%= link_to @user.nickname, user_path(id: @user.id), method: :get%>
       </div>
+      <div class= "user-remark">
+        <%= @user.remark %>
+      </div>
       <% if current_user.id == @user.id  %>
         <div class= "user-crew">
           <%= link_to "メッセージを確認する"%>
@@ -24,15 +27,15 @@
           <%= link_to "ダイレクトメッセージ"%>
         </div>
       <% end %>
-      <div class= "user-relationship">
-        <% if current_user != @user %>
+      <% if current_user != @user %>
+        <div class= "user-relationship">
           <% if @user.followed_by?(current_user) %>
-              <%=link_to "フォロー済み   ", user_relationships_path(@user.id), method: :delete %>
+            <%=link_to "フォロー済み   ", user_relationships_path(@user.id), method: :delete %>
           <% else %>
-              <%=link_to "フォローする", user_relationships_path(@user.id), method: :post %>
+            <%=link_to "フォローする", user_relationships_path(@user.id), method: :post %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
       <div class= "user-about">
         <%=link_to followers_user_path(@user.id), method: :get do%>
           <%= "#{@follower}" %>フォロー中
@@ -44,11 +47,6 @@
     </div>
   </div>
   <div class = "mypage-right-contents">
-    <%# if @user.remark != nil %>
-      <%#<div class="user-remark">
-        <%#= @user.remark %>
-      <%#</div>
-    <%# end %>
     <div class="user-places">
       <div class="user-places-title">
         良く使う練習場所

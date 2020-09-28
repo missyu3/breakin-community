@@ -3,6 +3,7 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
+        remark: 自己紹介
         email: Eメール
         password: パスワード
       place:

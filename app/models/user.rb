@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates :password, format: { with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください' }, allow_blank: true
-
+  validates :remark, length: { maximum: 200}
   def self.guest
     find_or_create_by!(email: 'guestlogin@example.com') do |user|
       user.nickname = Faker::Name.name
