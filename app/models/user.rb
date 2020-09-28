@@ -20,6 +20,8 @@ class User < ApplicationRecord
     find_or_create_by!(email: 'guestlogin@example.com') do |user|
       user.nickname = Faker::Name.name
       user.password = Faker::Internet.password(min_length: 6)
+      user.remark = 
+      "ダンス歴は10年です。好きなダンサーは〇〇です。主に東京で活動しています。〇〇大会優勝, 埼玉で毎週火曜19:00~レッスンをやっています。興味がある方はメッセージください。ダンスだけでなく最近はDJやラップといったカルチャーにも興味があり、勉強しています。"
     end
   end
 
