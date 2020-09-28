@@ -9,12 +9,21 @@
     </div>
     <div class='account-page__inner--right user-form'>
       <%= form_with model: current_user, local: true do |f|%>
+        <%= render 'error_messages', user: current_user %>
         <div class='field'>
           <div class='field-label'>
             <%= f.label :nickname%>
           </div>
           <div class='field-input'>
             <%= f.text_field :nickname, maxlength:"15", autofocus: true%>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :remark%>
+          </div>
+          <div class='field-input-remark'>
+            <%= f.text_area :remark, maxlength:"200", autofocus: true%>
           </div>
         </div>
         <div class='field'>
