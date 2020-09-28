@@ -9,25 +9,26 @@
 .mypage-left-contents {
   background-color:rgba(0,0,0,0.3);
   height:100%;
-  padding:20px 20px;
+  padding:10px 20px;
   width:300px;
   /*border-right:1px solid #fff;*/
 
 }
 .user-image {
-  height:50%;
+  height:30%;
   width:100%;
 }
 
 .user-icon {
   height: 100%;
-  width: 100%;
+  width: 70%;
   border-radius:50%;
   border:1px solid #dedede;
+  margin: 0 auto;
 }
 
 .user-profile {
-  height:50%;
+  height:70%;
   display: flex;
   justify-content: center;
   flex-direction:column;
@@ -35,10 +36,15 @@
   color:#dedede;
   font-size:20px;
   font-weight:bold;
+  padding:5px 0;
+}
+.user-relationship, .user-crew, .user-about, .user-nickname, .user-edit {
+  height:15%;
 }
 
-.user-relationship, .user-crew, .user-about, .user-nickname, .user-edit {
-  height:25%;
+.user-remark {
+  font-size: 10px;
+  height:40%;
 }
 
 .user-relationship > a, .user-crew > a,.user-edit > a,.user-about > a, .user-nickname > a{
@@ -48,8 +54,6 @@
   padding:10px;
   position: relative;
   width: 256px;
-  height: 64px;
-  line-height: 64px;
   transition: all 0.3s;
   span {
     transition: all 0.3s;
@@ -98,11 +102,6 @@
   height:100%;
 }
 
-
-.user-remark {
-  height:100px;
-  background-color:#777;
-}
 .user-places {
   height:100%;
   overflow: scroll;
