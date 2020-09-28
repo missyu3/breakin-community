@@ -32,8 +32,12 @@
   align-items: end;
   border-right:1px solid #dedede;
   color:#dedede;
+  font-size:10px;
+  padding:5px;
 }
 .mypage-follow-right > a{
   text-align: center;
   color:#dedede;
+  font-weight: bold;
+  font-size:15px;
 }
