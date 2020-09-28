@@ -49,25 +49,30 @@
         フォロー
       </div>
       <div class="user-follow">
-            <% @users.each do |user| %>
-        <div class="mypage-follow">
-          <div class="mypage-follow-left">
-            <div class= "mypage-item-box">
-              <% if @user.image.attached?%>
-                <%= image_tag @user.image,class:"item-box-img" %>
-              <% else %>
-                  <%= image_tag ("dancer.png") ,class:"item-box-img" %>
-              <% end %>
+        <% @users.each do |user| %>
+          <div class="mypage-follow">
+            <div class="mypage-follow-left">
+              <div class= "mypage-item-box">
+                <% if user.image.attached?%>
+                  <%= link_to user_path(user.id) do%>
+                    <%= image_tag user.image,class:"item-box-img" %>
+                  <% end %>
+                <% else %>
+                  <%= link_to user_path(user.id) do%>
+                    <%= image_tag ("dancer.png") ,class:"item-box-img" %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+            <div class="mypage-follow-right">
+                <%= link_to user.nickname, user_path(user.id) %>
+                <% unless current_user.followered_by?(user) || user == current_user %>
+                  <%=link_to "フォローする", user_relationships_path(user.id), method: :post %>
+                <% end %>
+                <%= user.remark %>
             </div>
           </div>
-          <div class="mypage-follow-right">
-              <%= link_to user.nickname, user_path(user.id) %>
-              <% unless current_user.followered_by?(user) || user == current_user %>
-                <%=link_to "フォローする", user_relationships_path(user.id), method: :post %>
-              <% end %>
-          </div>
-        </div>
-            <% end %>
+        <% end %>
       </div>
     </div>
   </div>
