@@ -4,6 +4,8 @@ class Place < ApplicationRecord
     validates :address, length: { maximum: 40 }
     validates :price, length: { maximum: 50 }
   end
+  validates :url, length: { maximum: 200 }
+
   has_many :messages, dependent: :destroy
   has_many :user_places, dependent: :destroy
   has_many :users, through: :user_places
