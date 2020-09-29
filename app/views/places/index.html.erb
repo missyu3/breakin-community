@@ -76,7 +76,7 @@
                   </tr>
                   <tr>
                     <th class="detail-item">url</th>
-                    <td class="detail-value-url"><% unless place.url == nil%><%= link_to "施設情報はこちら", place.url %><% end %></td>
+                    <td class="detail-value-url"><% unless place.url == nil%><%= link_to place.url, place.url %><% end %></td>
                   </tr>
                   <tr>
                     <th class="detail-item-remark">備考</th>
