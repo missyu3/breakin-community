@@ -75,6 +75,10 @@
                     <td class="detail-value"><%= place.price %></td>
                   </tr>
                   <tr>
+                    <th class="detail-item">url</th>
+                    <td class="detail-value"><% unless place.url == nil%><%= link_to place.url, place.url %><% end %></td>
+                  </tr>
+                  <tr>
                     <th class="detail-item-remark">備考</th>
                     <td class="detail-value-remark"><%= place.remark %></td>
                   </tr>

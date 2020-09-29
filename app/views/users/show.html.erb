@@ -109,6 +109,11 @@
                       <td class="detail-value"><%= user_place.place.price %></td>
                     </tr>
                     <tr>
+                      <th class="detail-item">url</th>
+                      <td class="detail-value"><% unless user_place.place.url == nil%><%= link_to user_place.place.url, user_place.place.url %><% end %></td>
+
+                    </tr>
+                    <tr>
                       <th class="detail-item-remark">備考</th>
                       <td class="mypage-detail-value-remark"><%= user_place.place.remark %></td>
                     </tr>
