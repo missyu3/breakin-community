@@ -1,16 +1,14 @@
 class MessagesController < ApplicationController
+  before_action :find_place, :find_messages, only: [:new, :create]
+
   def new
     @message = Message.new
-    @place = Place.find(params[:place_id])
-    @messages = @place.messages.includes(:user)
     @user_place = UserPlace.new
     @user_places = UserPlace.all
   end
 
   def create
-    @place = Place.find(params[:place_id])
     @message = Message.new(params_message)
-    @messages = @place.messages.includes(:user)
     @user = User.find_by(id: current_user.id)
     if @message.save
       ActionCable.server.broadcast 'message_channel', content: @message, user: @user
@@ -23,5 +21,13 @@ class MessagesController < ApplicationController
 
   def params_message
     params.require(:message).permit(:text).merge(user_id: current_user.id, place_id: params[:place_id])
+  end
+
+  def find_place
+    @place = Place.find(params[:place_id])
+  end
+
+  def find_messages
+    @messages = @place.messages.includes(:user)
   end
 end
