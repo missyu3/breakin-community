@@ -11,29 +11,6 @@ function initMap() {
     zoom: 9,
     clickableIcons: false
   });
-  // 東京にマーカーを立てる
-  // const markerA = new google.maps.Marker({
-  //   position: tokyo,
-  //   map: map,
-  //   title: 'tokyo'
-  // })
-  // hiddenクラスで隠してあるlink_toを取得→たくさんのクラスの情報を取得して配列にしてそれぞれにマーカーを立てさせる
-  // const about = document.getElementById("about") 
-  // const saitama = {lat: 35.831167,lng: 139.667052};
-  // 埼玉にマーカーを立てる
-  // const markerB = new google.maps.Marker({
-  //   position: saitama,
-  //   map: map,
-  //   title: about.innerHTML
-  // })
-  // 埼玉のマーカーをクリックするとウィンドウが表示され、link_toの中身を表示する
-  // markerB.addListener('click', function() {
-  //   const infoWindow = new google.maps.InfoWindow({
-  //     // content: e.latLng.toString()
-  //     content: about.innerHTML
-  //   });
-  //     infoWindow.open(map, markerB);
-  // })
 
   // クリック位置にマーカー表示させ、マーカーをクリックするとウィンドウに緯度経度を表示
   // map.addListener('click', function(e) {
@@ -51,13 +28,11 @@ function initMap() {
   //   });
   //   });
 
-  // // たくさんのクラスの情報を取得して配列にしてそこの地図を描画させる
+  // 大阪・北海道などの代表的な場所の地図を表示させる
   const samples = document.getElementsByClassName("sample");
   const sampleA = Array.from(samples);
   sampleA.forEach(function (sample) {
     sample.addEventListener("click", (e) => { 
-      // console.log(sample.innerHTML)
-      // console.log(gon.places_address)
       geocoder.geocode({
           address: sample.innerHTML
         }, function(results, status) {
@@ -75,15 +50,14 @@ function initMap() {
       });
     });
   });
-  // たくさんのクラスの情報を取得して配列にしてそこにマーカーを立て、クリックするとウィンドウが出る
+
+  // データベースに登録されている練習場所全てにマーカーを立て、クリックするとウィンドウが出る
   const places = document.getElementsByClassName("practicePlace");
   const names = document.getElementsByClassName("practiceName");
   const chats = document.getElementsByClassName("practiceChat");
   const placesArray = Array.from(places);
   const placeShows =document.getElementsByClassName("place-show"); 
   const placeShowsArray = Array.from(placeShows);
-  // placesArray.forEach(function (place) {
-  // });
   for(let i = 0; i < placesArray.length; i++){
     geocoder.geocode({
         address: placesArray[i].innerHTML 
