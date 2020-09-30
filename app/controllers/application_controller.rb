@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
-  # before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  # ゲストユーザーを編集・削除できないようにする
   def check_guest
-    email = resource&.email || params[:user][:email].downcase
+    email = resource.email
     redirect_to root_path, alert: 'ゲストユーザーの変更・削除はできません。' if email == 'guestlogin@example.com'
   end
 
