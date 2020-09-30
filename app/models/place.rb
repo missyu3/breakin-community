@@ -9,6 +9,6 @@ class Place < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :user_places, dependent: :destroy
   has_many :users, through: :user_places
-  accepts_nested_attributes_for :user_places
+  accepts_nested_attributes_for :user_places # place保存にuser_placeも保存される
   has_one_attached :image
 end
