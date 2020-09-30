@@ -1,0 +1,32 @@
+<% @messages.reverse_each do |message| %>
+<%#ユーザーがログインしていない場合%>
+  <%#全投稿を左側に表示させる%>
+  <div class="message-content-left">
+    <div class="message-icon">
+      <% if message.user.image.attached?%>
+      <%#ユーザー画像を登録している場合%>
+        <%= link_to user_path(message.user) do%>
+          <%= image_tag message.user.image ,class:"message-user-icon"%>
+        <% end %>
+      <% else %>
+      <%#ユーザー画像を登録していない場合%>
+        <%= link_to user_path(message.user) do%>
+          <%= image_tag ("dancer.png") ,class:"message-user-icon" %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="message-name">
+      <%= link_to user_path(message.user) do%>
+        <p><%= message.user.nickname %></p>
+      <% end %>
+    </div>
+    <div class="created-at">
+      <p><%= message.created_at %></p>
+    </div>
+  </div>
+  <div class="lower-message-left">
+    <div class="text">
+      <p><%= message.text %></p>
+    </div>
+  </div>
+<% end %>
