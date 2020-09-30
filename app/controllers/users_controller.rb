@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :find_user, :find_relationship, :find_follows, :find_followers, only: [:show, :follows, :followers]
+
   def edit
   end
 
@@ -13,32 +15,36 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @user_places = UserPlace.all
-    @relationship = Relationship.all
-    @follow = @relationship.where(follower_id: params[:id]).count
-    @follower = @relationship.where(following_id: params[:id]).count
   end
-  
+
   def follows
-    @user = User.find(params[:id])
     @users = @user.followers
-    @relationship = Relationship.all
-    @follow = @relationship.where(follower_id: params[:id]).count
-    @follower = @relationship.where(following_id: params[:id]).count
   end
-  
+
   def followers
-    @user = User.find(params[:id])
     @users = @user.followings
-    @relationship = Relationship.all
-    @follow = @relationship.where(follower_id: params[:id]).count
-    @follower = @relationship.where(following_id: params[:id]).count
   end
 
   private
 
   def params_user
     params.require(:user).permit(:image, :nickname, :email, :remark)
+  end
+
+  def find_user
+    @user = User.find(params[:id])
+  end
+
+  def find_relationship
+    @relationship = Relationship.all
+  end
+
+  def find_follows
+    @follow = @relationship.where(follower_id: params[:id]).count
+  end
+
+  def find_followers
+    @follower = @relationship.where(following_id: params[:id]).count
   end
 end
