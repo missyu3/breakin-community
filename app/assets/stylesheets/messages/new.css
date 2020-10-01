@@ -49,6 +49,7 @@
 .header-message-icon {
   height: 50%;
   width: 18%;
+  position:relative;
 }
 .header-user-icon {
     border-radius:50%;
