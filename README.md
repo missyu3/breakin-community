@@ -25,7 +25,7 @@ https://breakin-community.com/
   Travis CI<br>
   JavaScript<br>
   Ruby 2.6.5<br>
-  Rails 6.0.3.2<br>
+  Rails 6.0.0<br>
   MySQL2<br>
   Redis<br>
   Nginx<br>
