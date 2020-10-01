@@ -70,9 +70,9 @@
         <%#最初にこの練習場所を登録した人かどうかで条件分岐%>
           <% if @user_places.where(place_id: @place.id).order(created_at: :asc).first == @user_places.where(user_id: current_user, place_id: @place.id).first %>
             <%= link_to "編集", edit_place_path(@place), method: :get %>
-            <%= link_to "削除", place_path(@place), method: :delete  %>
+            <%= link_to "削除", place_path(@place), method: :delete, data: {confirm: "このチャットに関連する人やメッセージ等の情報は全て消去されます\n本当に削除してもよろしいですか？"}%>
           <% else %>
-            <%= link_to "チャットから抜ける" , user_place_path(@place), method: :delete %>
+            <%= link_to "チャットから抜ける" , user_place_path(@place), method: :delete, data: {confirm: "退室してもメッセージはそのまま残すことができます\n本当に退室してもよろしいですか？"} %>
           <% end %>
         <%#最初にこの練習場所を登録した人かどうかで条件分岐%>
         <% end %>

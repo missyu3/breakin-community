@@ -28,7 +28,7 @@
     <% if current_user != @user %>
       <div class= "user-relationship">
         <% if @user.followed_by?(current_user) %>
-          <%=link_to "フォロー済み   ", user_relationships_path(@user.id), method: :delete %>
+          <%=link_to "フォロー済み   ", user_relationships_path(@user.id), method: :delete, data: {confirm: "フォローを解除してもよろしいですか？"} %>
         <% else %>
           <%=link_to "フォローする", user_relationships_path(@user.id), method: :post %>
         <% end %>
