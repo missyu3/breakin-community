@@ -13,11 +13,11 @@
               <div class= "mypage-item-box">
                 <% if user.image.attached?%>
                   <%= link_to user_path(user.id) do%>
-                    <%= image_tag user.image,class:"item-box-img" %>
+                    <%= image_tag user.image,class:"follow-img" %>
                   <% end %>
                 <% else %>
                   <%= link_to user_path(user.id) do%>
-                    <%= image_tag ("dancer.png") ,class:"item-box-img" %>
+                    <%= image_tag ("dancer.png") ,class:"follow-img" %>
                   <% end %>
                 <% end %>
               </div>
