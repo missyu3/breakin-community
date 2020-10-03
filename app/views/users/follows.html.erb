@@ -10,7 +10,20 @@
         <% @users.each do |user| %>
           <div class="mypage-follow">
             <div class="mypage-follow-left">
-              <div class= "mypage-item-box">
+              <% case user.dance_level.id %>
+              <% when 1 %>
+                <div class= "follow-item-box">
+              <% when 2 %>
+                <div class= "follow-item-box2">
+              <% when 3 %>
+                <div class= "follow-item-box3">
+              <% when 4 %>
+                <div class= "follow-item-box4">
+              <% when 5 %>
+                <div class= "follow-item-box5">
+              <% when 6 %>
+                <div class= "follow-item-box6">
+              <% end %>
                 <% if user.image.attached?%>
                   <%= link_to user_path(user.id) do%>
                     <%= image_tag user.image,class:"follow-img" %>

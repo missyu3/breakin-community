@@ -2,11 +2,11 @@
   <div class="hidden place-show" id="placeShow">
     <div class="mypage-place-show-left">
       <% if place.image.attached?%>
-        <div class="mypage-item-box">
+        <div class="toppage-item-box">
           <%= image_tag place.image ,class:"item-box-img" %>
         </div>
       <% else %>
-        <div class="mypage-item-box">
+        <div class="toppage-item-box">
           <%= image_tag ("default_place.png") ,class:"item-box-img" %>
         </div>
       <% end %>
