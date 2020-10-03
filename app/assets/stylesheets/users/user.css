@@ -68,6 +68,10 @@
   width: 100%;
   display:block;
 }
+.dance-level-select{
+  height: 30px;
+  width: 100%;
+}
 .account-page .field .field-submit .btn {
   width: 100%;
   letter-spacing: 10px;
