@@ -1,14 +1,35 @@
 <div class= "mypage-left-contents">
-  <div class= "user-image">
-    <% if @user.image.attached?%>
-      <%= image_tag @user.image,class:"user-icon" %>
-    <% else %>
-        <%= image_tag ("dancer.png") ,class:"user-icon" %>
-    <% end %>
-  </div>
+  <%# ダンスレベルに応じてユーザーアイコンのフレーム変更 %>
+  
+  <% case @user.dance_level.id %>
+  <% when 1 %>
+    <div class= "user-image">
+  <% when 2 %>
+    <div class= "user-image2">
+  <% when 3 %>
+    <div class= "user-image3">
+  <% when 4 %>
+    <div class= "user-image4">
+  <% when 5 %>
+    <div class= "user-image5">
+  <% when 6 %>
+    <div class= "user-image6">
+  <% else %>
+    <div class= "user-image">
+  <% end %>
+      <% if @user.image.attached?%>
+        <%= image_tag @user.image,class:"user-icon" %>
+      <% else %>
+          <%= image_tag ("dancer.png") ,class:"user-icon" %>
+      <% end %>
+    </div>
+  <%# ダンスレベルに応じてユーザーアイコンのフレーム変更 %>
   <div class= "user-profile">
     <div class= "user-nickname">
       <%= link_to @user.nickname, user_path(id: @user.id), method: :get%>
+    </div>
+    <div class= "user-dance-level">
+      <%= @user.dance_level.name %>
     </div>
     <div class= "user-remark">
       <%= @user.remark %>
