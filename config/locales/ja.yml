@@ -6,6 +6,7 @@ ja:
         remark: 自己紹介
         email: Eメール
         password: パスワード
+        dance_level_id: ダンス歴
       place:
         name: 名前
         address: 住所
