@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     redirect_to root_path, alert: 'ゲストユーザーは編集・削除できません。' and return if current_user.email == 'guestlogin@example.com'
 
     if current_user.update(params_user)
-      redirect_to root_path
+      redirect_to user_path
     else
       render :edit
     end
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   private
 
   def params_user
-    params.require(:user).permit(:image, :nickname, :email, :remark)
+    params.require(:user).permit(:image, :nickname, :email, :remark, :dance_level_id)
   end
 
   def find_user
