@@ -34,6 +34,14 @@
             <%= f.email_field :email%>
           </div>
         </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :dance_level_id%>
+          </div>
+          <div class='field-input'>
+            <%= f.collection_select(:dance_level_id, DanceLevel.all, :id, :name, {}, {class:"dance-level-select"}) %>
+          </div>
+        </div>
         <div class="field">
           <div class="field-label">
             ユーザーアイコン画像
