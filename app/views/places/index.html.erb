@@ -34,8 +34,9 @@
 <%= render "shared/footer" %> 
 <% @places.each do |place|%><%#各練習場所の情報を取得できるようにする%>
   <div class= "practicePlace hidden"><%= place.address%></div>
-  <div class= "practiceName hidden"></div>
   <div class= "practiceChat hidden">
     <%= link_to "#{place.name}のチャットページへ" , new_place_message_path(place.id) , method: :get %>
   </div>
+  <div class= "practiceLat hidden"><%= place.lat%></div>
+  <div class= "practiceLng hidden"><%= place.lng%></div>
 <% end %>
