@@ -21,7 +21,7 @@ function initMap() {
   //   });
   //   var infoWindow = new google.maps.InfoWindow({
   //     // content: e.latLng.toString()
-  //     content: `詳細ページはこちら${about.innerHTML}`
+  //     content: `詳細ページはこちら`
   //   });
   //   marker.addListener('click', function() {
   //     infoWindow.open(map, marker);
@@ -53,42 +53,51 @@ function initMap() {
 
   // データベースに登録されている練習場所全てにマーカーを立て、クリックするとウィンドウが出る
   const places = document.getElementsByClassName("practicePlace");
-  const names = document.getElementsByClassName("practiceName");
   const chats = document.getElementsByClassName("practiceChat");
+  const lats = document.getElementsByClassName("practiceLat");
+  const lngs = document.getElementsByClassName("practiceLng");
   const placesArray = Array.from(places);
-  const placeShows =document.getElementsByClassName("place-show"); 
+  const latArray = Array.from(lats);
+  const lngArray = Array.from(lngs);
+  const placeShows =document.getElementsByClassName("place-show");
   const placeShowsArray = Array.from(placeShows);
+  // 登録された練習場所の数だけ行う
   for(let i = 0; i < placesArray.length; i++){
+    const latLng = {
+          lat: parseFloat(latArray[i].innerHTML),//緯度
+          lng: parseFloat(lngArray[i].innerHTML),//経度
+        };
+    // その地点の緯度経度をもとに住所を表示する
+    setTimeout(function () {
     geocoder.geocode({
-        address: placesArray[i].innerHTML 
-      }, function(results, status) {
-        if (status !== 'OK') {
-          alert('Failed: ' + status);
-          return;
-        }
-        if (results[0]) {
-          const marker = new google.maps.Marker({
-            position: results[0].geometry.location,
-            map: map,
-            animation: google.maps.Animation.DROP
-          });
-          const infoWindow = new google.maps.InfoWindow({
-          content: `${names[i].innerHTML} ${chats[i].innerHTML}`
-          });
-          marker.addListener('click', function() {
-          infoWindow.open(map, marker);
-          for(let i = 0; i < placesArray.length; i++){
-            if (placeShowsArray[i].getAttribute("style") == "display:flex;") { 
-              placeShowsArray[i].setAttribute("style", "display:none;");
-            }
+      address: placesArray[i].innerHTML,
+      // location: latLng
+    }, function (results, status) {
+      if (status !== 'OK') {
+        alert('Failed: ' + status);
+        return;
+      }
+          if (results[0]) {
+            const marker = new google.maps.Marker({
+              position: results[0].geometry.location,
+              map: map,
+              animation: google.maps.Animation.DROP
+            });
+            const infoWindow = new google.maps.InfoWindow({
+              content: `${chats[i].innerHTML}`
+            });
+            marker.addListener('click', function() {
+              infoWindow.open(map, marker);
+              for(let i = 0; i < placesArray.length; i++){
+                if (placeShowsArray[i].getAttribute("style") == "display:flex;") {
+                  placeShowsArray[i].setAttribute("style", "display:none;");
+                }
+              }
+              placeShowsArray[i].setAttribute("style", "display:flex;");
+            });
           }
-          placeShowsArray[i].setAttribute("style", "display:flex;");
-          });
-        } else {
-          alert('No results found');
-          return;
-        }
-    });
+        })
+      }, 200 * i);
   }
 
   // 検索するとそこの住所の地図が描画される
