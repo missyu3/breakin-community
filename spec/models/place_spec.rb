@@ -68,22 +68,22 @@ RSpec.describe Place, type: :model do
       it 'latが-90より小さいと登録できない' do
         @place.lat = -90.1
         @place.valid?
-        expect(@place.errors.full_messages).to include 'Latは-90以上の値にしてください'
+        expect(@place.errors.full_messages).to include '緯度は-90以上の値にしてください'
       end
       it 'latが90より大きいと登録できない' do
         @place.lat = 90.1
         @place.valid?
-        expect(@place.errors.full_messages).to include 'Latは90以下の値にしてください'
+        expect(@place.errors.full_messages).to include '緯度は90以下の値にしてください'
       end
       it 'lngが-180より小さいと登録できない' do
         @place.lng = -180.1
         @place.valid?
-        expect(@place.errors.full_messages).to include 'Lngは-180以上の値にしてください'
+        expect(@place.errors.full_messages).to include '経度は-180以上の値にしてください'
       end
       it 'lngが180より大きいと登録できない' do
         @place.lng = 180.1
         @place.valid?
-        expect(@place.errors.full_messages).to include 'Lngは180以下の値にしてください'
+        expect(@place.errors.full_messages).to include '経度は180以下の値にしてください'
       end
       it 'imageの拡張子は.jpeg, .jpg, .gif, .png, .bmp以外では登録できないこと' do
         @place.image = fixture_file_upload('app/assets/images/test.eps')
