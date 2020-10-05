@@ -14,6 +14,9 @@ ja:
         price: 金額
         image: 画像
         url: URL
+        remark: 備考欄
+        lat: 緯度
+        lng: 経度
       message:
         text: テキスト
     errors:
