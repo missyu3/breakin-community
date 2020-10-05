@@ -49,7 +49,7 @@
             写真(練習風景など)
           </div>
           <div class="new-image-form">
-            <%= f.file_field :image, class: 'image' %>
+            <%= f.file_field :image, accept: '.jpeg, .jpg, .gif, .png, .bmp', class: 'image' %>
           </div>
         </div>
         <input name="place[user_ids][]" type="hidden" value=<%=current_user.id%>>

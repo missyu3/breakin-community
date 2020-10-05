@@ -9,13 +9,13 @@ RSpec.describe 'Places', type: :request do
     #   get places_path
     #   expect(response).to have_http_status(200)
     # end
-    it 'newアクションにリクエストするとログインページへリダイレクトされる' do
-      get new_place_path
-      expect(response).to have_http_status(302)
-    end
-    it 'editアクションにリクエストするとログインページへリダイレクトされる' do
-      get edit_place_path(@place.id)
-      expect(response).to have_http_status(302)
-    end
+    # it 'newアクションにリクエストするとログインページへリダイレクトされる' do
+    #   get new_place_path
+    #   expect(response).to have_http_status(302)
+    # end
+    # it 'editアクションにリクエストするとログインページへリダイレクトされる' do
+    #   get edit_place_path(@place.id)
+    #   expect(response).to have_http_status(302)
+    # end
   end
 end
