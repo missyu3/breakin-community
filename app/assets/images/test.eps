@@ -1,0 +1,56 @@
+%%BoundingBox: 40 40 160 160
+
+/m {moveto} def
+/l {lineto} def 
+/np {newpath} def 
+/cp {closepath} def 
+/sg {setgray} def 
+/sc {setrgbcolor} def 
+
+
+1 setlinewidth
+
+np
+105 105 m
+105 105 50 -60 90 arc
+cp
+gsave
+1 0.7 0.7 sc
+fill
+grestore
+0 sg
+stroke
+
+np
+ 95 105 m
+ 95 105 50 90 225 arc
+cp
+gsave
+0.7 0.7 1 sc
+fill
+grestore
+0 sg
+stroke
+
+np
+100 100 m
+100 100 50 225 300 arc
+cp
+gsave
+0.8 sg
+fill
+
+
+0 sg
+
+/Helvetica findfont 16 scalefont setfont
+115 115 m
+(Yes) show
+60 115 m
+(No) show
+
+/Times-Roman findfont 12 scalefont setfont
+115 100 m
+(42%) show
+60 100 m
+(38%) show
