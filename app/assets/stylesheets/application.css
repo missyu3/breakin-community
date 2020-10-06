@@ -105,7 +105,7 @@ select {
 
 .error-alert {
   padding:10px;
-  background-color: rgba(0,0,0,0.3);
+  /* background-color: rgba(0,0,0,0.3); */
 }
 .error-alert > ul {
   margin:10px auto;
