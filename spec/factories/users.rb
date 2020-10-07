@@ -7,6 +7,5 @@ FactoryBot.define do
     password_confirmation { password }
     remark { Faker::Lorem.sentence }
     dance_level_id { 3 }
-    image {Faker::Lorem.sentence}
   end
 end

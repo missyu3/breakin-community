@@ -7,6 +7,5 @@ FactoryBot.define do
     url { Faker::Internet.url }
     lat { Faker::Address.latitude }
     lng { Faker::Address.longitude }
-    image {Faker::Lorem.sentence}
   end
 end
