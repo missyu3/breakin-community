@@ -13,8 +13,8 @@ class Place < ApplicationRecord
   has_many :user_places, dependent: :destroy
   has_many :users, through: :user_places
   accepts_nested_attributes_for :user_places # place保存にuser_placeも保存される
-  # validates :lat, numericality: { greater_than_or_equal_to:  -90, less_than_or_equal_to:  90 }
-  # validates :lng, numericality: { greater_than_or_equal_to: -180, less_than_or_equal_to: 180 }
+  validates :lat, numericality: { greater_than_or_equal_to:  -90, less_than_or_equal_to:  90 }
+  validates :lng, numericality: { greater_than_or_equal_to: -180, less_than_or_equal_to: 180 }
 
   has_one_attached :image
   validate :image_content_type, if: :was_attached?

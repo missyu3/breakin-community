@@ -1,5 +1,15 @@
 <%= render "shared/header" %> 
 <div class="new-contents">
+  <div class="map-contents">
+    <div class="content">
+    <div class="place">マップにマーカーを立てて新しい練習場所を登録する</div>
+      <div id="newTarget"></div><%#地図を表示%>
+      <form class= "search">
+        <input type="text" id="address">
+        <input type=submit id="search" onClick="return false;" value="Search">
+      </form>
+    </div>
+  </div>
   <div class="contents">
     <%= form_with model: @place, url: places_path, local: true do |f| %>
       <%= render 'error_messages', place: @place %>
@@ -17,7 +27,7 @@
             練習場所の住所
           </div>
           <div class="new-address-form">
-            <%= f.text_area :address, placeholder:"（必須 )\nGoogleMapで検索できる地名でないと登録できません", maxlength:"40" %>
+            <%= f.text_area :address, placeholder:"（必須 )\nGoogleMapをクリックしてみましょう", maxlength:"40" %>
           </div>
         </div>
         <div class="new-price">
@@ -53,21 +63,12 @@
           </div>
         </div>
         <input name="place[user_ids][]" type="hidden" value=<%=current_user.id%>>
-        <input name="place[lats][]" type= "hidden" id="lat" >
-        <input name="place[lngs][]" type= "hidden" id="lng" >
+        <input name="place[lat]" type= "hidden" id="lat" >
+        <input name="place[lng]" type= "hidden" id="lng" >
         <%= f.submit "新しい練習場所を登録する！" %>
         <%=link_to 'もどる', root_path%>
       </div>
     <% end %>
-  </div>
-  <div class="map-contents">
-    <div class="content">
-      <div id="newTarget"></div><%#地図を表示%>
-      <form class= "search">
-        <input type="text" id="address">
-        <input type=submit id="search" onClick="return false;" value="Search">
-      </form>
-    </div>
   </div>
 </div>
 <%= render "shared/footer" %> 
