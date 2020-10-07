@@ -1,5 +1,15 @@
 <%= render "shared/header" %> 
 <div class="new-contents">
+  <div class="map-contents">
+    <div class="content">
+    <div class="place">マップにマーカーを立てて練習場所を編集する</div>
+      <div id="newTarget"></div><%#地図を表示%>
+      <form class= "search">
+        <input type="text" id="address">
+        <input type=submit id="search" onClick="return false;" value="Search">
+      </form>
+    </div>
+  </div>
   <div class="contents">
     <%= form_with model: @place, url: place_path, local: true do |f| %>
       <%= render 'error_messages', place: @place %>
@@ -53,6 +63,8 @@
           </div>
         </div>
         <input name="place[user_ids][]" type="hidden" value=<%=current_user.id%> >
+        <input name="place[lat]" type= "hidden" id="lat" value=<%=@place.lat%> >
+        <input name="place[lng]" type= "hidden" id="lng" value=<%=@place.lng%> >
         <%= f.submit "変更する！" %>
         <%=link_to 'もどる', root_path%>
       </div>
