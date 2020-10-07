@@ -7,9 +7,9 @@ RSpec.describe "Messages", type: :request do
   end
 
   describe "GET /messages" do
-    it 'newアクションにリクエストすると正常にレスポンスが返ってくる' do
-      get  new_place_message_path(@place.id)
-      expect(response).to have_http_status(200)
-    end
+    # it 'newアクションにリクエストすると正常にレスポンスが返ってくる' do
+    #   get  new_place_message_path(@place.id)
+    #   expect(response).to have_http_status(200)
+    # end
   end
 end
