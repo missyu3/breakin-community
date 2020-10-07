@@ -21,15 +21,8 @@ function newMap() {
           map: map,
           animation: google.maps.Animation.DROP,
         });
-        const infoWindow = new google.maps.InfoWindow({
-          content: e.latLng.toString("style", "color:black;")
-        });
-        marker.addListener('click', function() {
-          infoWindow.open(map, marker);
-          infoWindow.content.setAttribute();
-        placeAddress.innerHTML = results[0].formatted_address;
-        });
         // placeAddress.innerHTML = results[0].geometry.location;
+        placeAddress.innerHTML = results[0].formatted_address;
         document.getElementById('lat').value=results[0].geometry.location.lat();
         document.getElementById('lng').value=results[0].geometry.location.lng();
         placeAddress.innerHTML = results[0].formatted_address;
