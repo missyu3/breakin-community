@@ -1,4 +1,4 @@
-FROM ruby:2.7.1
+FROM ruby:2.6.5
 
 RUN apt-get update && \
     apt-get install -y nodejs vim yarn --no-install-recommends && \
