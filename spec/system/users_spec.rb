@@ -7,10 +7,6 @@ RSpec.describe "Users", type: :system do
     end
     context 'ユーザー新規登録ができるとき' do
       it '正しい情報を入力すればユーザー新規登録ができてトップページに移動する' do
-        visit root_path
-        expect(page).to have_content('ログイン')
-        visit  new_user_session_path
-        expect(page).to have_content('Sign up')
         visit new_user_registration_path
         fill_in 'user_nickname', with: @user.nickname
         fill_in 'user_email', with: @user.email
@@ -25,10 +21,6 @@ RSpec.describe "Users", type: :system do
     end
     context 'ユーザー新規登録ができないとき' do
       it '誤った情報ではユーザー新規登録ができない' do
-        visit root_path
-        expect(page).to have_content('ログイン')
-        visit  new_user_session_path
-        expect(page).to have_content('Sign up')
         visit new_user_registration_path
         fill_in 'user_nickname', with: ""
         fill_in 'user_email', with: ""
@@ -39,10 +31,6 @@ RSpec.describe "Users", type: :system do
         }.to change {User.count}.by(0)
       end
       it 'ダンス歴を設定しなければユーザー新規登録ができない' do
-        visit root_path
-        expect(page).to have_content('ログイン')
-        visit  new_user_session_path
-        expect(page).to have_content('Sign up')
         visit new_user_registration_path
         select '【ダンス歴未設定】', from: 'ダンス歴'
         expect{
@@ -59,7 +47,6 @@ RSpec.describe "Users", type: :system do
     context 'ユーザーログインができる時' do
       it '保存されているユーザーの情報と合致すればログインができる' do
         sign_in(@user)
-        expect(page).to have_content('ログアウト')  
       end
     end
     context 'ユーザーログインができない時' do
