@@ -25,6 +25,8 @@ services:
     depends_on:
       - db
     env_file: my_env_file.env
+    environment: #travisCIでchromeを使うため
+    - "SELENIUM_DRIVER_URL=http://selenium_chrome:4444/wd/hub"
 
 volumes:
   mysql-data:
