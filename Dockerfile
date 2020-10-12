@@ -1,7 +1,7 @@
 FROM ruby:2.6.5
 
 RUN apt-get update && \
-    apt-get install -y build-essential nodejs vim yarn --no-install-recommends && \
+    apt-get install -y build-essential nodejs vim --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
 # chromeの追加
@@ -16,6 +16,9 @@ RUN apt-get update && apt-get install -y unzip && \
     sh -c 'wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -' && \
     sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' && \
     apt-get update && apt-get install -y google-chrome-stable
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && apt-get install yarn
 
 WORKDIR /breakin-community
 COPY Gemfile Gemfile.lock /breakin-community/
