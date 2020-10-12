@@ -10,5 +10,9 @@ addons:
 script:
   - docker-compose exec --env 'RAILS_ENV'=test web rails db:create
   - docker-compose exec --env 'RAILS_ENV'=test web rails db:migrate
+  - docker-compose exec --env 'RAILS_ENV'=test web rm -rf bin/webpack*
+  - docker-compose exec --env 'RAILS_ENV'=test web rm -rf config/webpacker.yml
+  - docker-compose exec --env 'RAILS_ENV'=test web rails webpacker:install
+  - docker-compose exec --env 'RAILS_ENV'=test web bundle exec rails webpacker:compile 
   - docker-compose exec --env 'RAILS_ENV'=test web bundle exec rspec 
  
