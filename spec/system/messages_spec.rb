@@ -20,13 +20,15 @@ RSpec.describe "Messages", type: :system do
         visit  new_place_message_path(@place)
         fill_in 'textField', with: 'よろしく'
         find('.commit').click
-        change {Message.count}.by(1)#actioncableを用いた非同期通信のためclickとは別で実行
+        visit  new_place_message_path(@place)#actioncableを用いた非同期通信のためリロードする
+        change {Message.count}.by(1)
       end
       it '自分のチャットは右側に表示される' do
         sign_in(@user)
         visit  new_place_message_path(@place)
         fill_in 'textField', with: 'よろしく'
         find('.commit').click
+        visit  new_place_message_path(@place)#actioncableを用いた非同期通信のためリロードする
         expect(page).to have_selector '.message-content-right'
       end
       it '他のユーザーのチャットは左側に表示される' do
