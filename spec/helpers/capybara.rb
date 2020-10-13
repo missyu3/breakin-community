@@ -11,6 +11,7 @@ Capybara.register_driver :selenium_chrome_headless do |app|
   options.add_argument('--disable-gpu')
   options.add_argument('--window-size=1400,1400')
   options.add_argument("--remote-debugging-port=9222") 
+  options.headless = True
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end
 Capybara.javascript_driver = :selenium_chrome_headless
