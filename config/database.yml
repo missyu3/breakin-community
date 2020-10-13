@@ -18,6 +18,7 @@ default: &default
   socket: /tmp/mysql.sock
   host: db
 
+
 development:
   <<: *default
   database: breakin_community_development
