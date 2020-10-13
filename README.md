@@ -34,6 +34,9 @@ https://breakin-community.com/
   Google API ( Maps Javascript API / Geocoding API )<br>
   Git / GitHub
 
+## インフラ構成図
+![クラウドアーキテクチャ](https://user-images.githubusercontent.com/64772703/95853983-383ef080-0d91-11eb-8b42-c46681863ad1.jpg)
+
 ## 制作背景
 引越しや転勤があっても趣味を続けられるようなアプリを制作したかったからです。<br>
 私の趣味は大学から続けているブレイクダンスなのですが、<br>
