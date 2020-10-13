@@ -36,7 +36,7 @@ RSpec.configure do |config|
     driven_by :rack_test
   end
   
-  #js:trueの時のテストはCDでは[selenium]ドライバ,ローカルでは[selenium_chrome_headless]ドライバにする
+  #js:trueの時のテストはCDでは[selenium]ドライバ,ローカルでは[selenium_chrome]ドライバにする
   config.before(:each, type: :system, js: true) do
     if ENV["SELENIUM_DRIVER_URL"].present?
       driven_by :selenium, using: :chrome, options: {
@@ -45,7 +45,7 @@ RSpec.configure do |config|
         desired_capabilities: :chrome
       }
     else
-      driven_by :selenium_chrome_headless
+      driven_by :selenium_chrome
     end
   end
   
