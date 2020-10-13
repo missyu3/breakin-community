@@ -2,6 +2,7 @@ class PlacesController < ApplicationController
   before_action :find_place, only: [:show, :edit, :update, :destroy]
   before_action :move_to_session, only: [:new, :edit, :destroy]
 
+
   def index
     @places = Place.all
     @user_places = UserPlace.all
@@ -22,6 +23,11 @@ class PlacesController < ApplicationController
   end
 
   def edit
+    @user_places = UserPlace.all
+    #直接URLを入力してもアクセスできないようにする
+    unless @user_places.where(place_id: @place.id).order(created_at: :asc).first == @user_places.where(user_id: current_user, place_id: @place.id).first
+      redirect_to root_path
+    end
   end
 
   def update
