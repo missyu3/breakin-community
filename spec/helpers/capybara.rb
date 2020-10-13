@@ -1,8 +1,8 @@
 require 'capybara/rspec'
 require 'selenium-webdriver'
 
-# selenium_chromeというドライバーをcapybaraに登録する
-Capybara.register_driver :selenium_chrome do |app|
+# selenium_chrome_headlessというドライバーをcapybaraに登録する
+Capybara.register_driver :selenium_chrome_headless do |app|
   options = ::Selenium::WebDriver::Chrome::Options.new
   
   options.add_argument('--headless')
@@ -12,7 +12,7 @@ Capybara.register_driver :selenium_chrome do |app|
   
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end
-Capybara.javascript_driver = :selenium_chrome
+Capybara.javascript_driver = :selenium_chrome_headless
 
 # chromeというドライバーをcapybaraに登録する
 Capybara.register_driver :chrome do |app|
