@@ -20,7 +20,7 @@ https://breakin-community.com/
   レスポンシブデザイン(スマホ・タブレット)
 
 ## 使用技術
-  AWS( EC2 / S3 / Route53 / ALB / RDS / ElastiCache )<br>
+  AWS( ACM / ALB / EC2 / ElastiCache / RDS / Route53 / S3 )<br>
   Docker / Docker-Compose<br>
   Travis CI<br>
   JavaScript<br>
@@ -35,7 +35,7 @@ https://breakin-community.com/
   Git / GitHub
 
 ## インフラ構成図
-![クラウドアーキテクチャ](https://user-images.githubusercontent.com/64772703/95853983-383ef080-0d91-11eb-8b42-c46681863ad1.jpg)
+![クラウドアーキテクチャ (1)](https://user-images.githubusercontent.com/64772703/95868321-0d5e9780-0da5-11eb-8e44-d7573869c54c.jpg)
 
 ## 制作背景
 引越しや転勤があっても趣味を続けられるようなアプリを制作したかったからです。<br>
