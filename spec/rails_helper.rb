@@ -36,17 +36,13 @@ RSpec.configure do |config|
     driven_by :rack_test
   end
   
-  #js:trueの時のテストはCDでは[selenium]ドライバ,ローカルでは[selenium_chrome_headless]ドライバにする
+  #js:trueの時のテストは[selenium_chrome_headless]ドライバにする
   config.before(:each, type: :system, js: true) do
-    if ENV["SELENIUM_DRIVER_URL"].present?
-      driven_by :selenium, using: :chrome, options: {
+      driven_by :selenium_chrome_headless, using: :chrome, options: {
         browser: :remote,
-        url: ENV.fetch("SELENIUM_DRIVER_URL"),
+        url: "http://selenium_chrome:4444/wd/hub",
         desired_capabilities: :chrome
       }
-    else
-      driven_by :selenium_chrome_headless
-    end
   end
   
   config.include SignInSupport
