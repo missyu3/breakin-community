@@ -40,7 +40,7 @@ RSpec.configure do |config|
   config.before(:each, type: :system, js: true) do
       driven_by :selenium_chrome_headless, using: :chrome, options: {
         browser: :remote,
-        url: "http://selenium_chrome:4444/wd/hub",
+        url: ENV.fetch("SELENIUM_DRIVER_URL"),
         desired_capabilities: :chrome
       }
   end
