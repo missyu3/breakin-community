@@ -205,6 +205,7 @@ a {
   color:#FFF;
   position:relative;
   text-align:center;
+  overflow-wrap: anywhere;
 }
 
 .detail-value-url > a {
@@ -216,7 +217,6 @@ a {
   right:0;
   -webkit-transform : translateY(-50%);
   transform: translateY(-50%);
-  position: relative;
   display: inline-block;
   transition: .3s;
 }
@@ -292,19 +292,25 @@ a {
 }
 
 @media (max-width: 1024px) {
+  .main {
+    display: block;
+    height: auto;
+  }
   .main-contents-left {
-    width:55%;
+    width:100%;
   }
   #address {
     width:60%;
   }
   .main-contents-right{
-    width:45%;
+    width:100%;
     margin-right:10px;
+    height:60vh;
   }
   .main-content-right-upper{
-    width:95%;
-    height:30%;
+    width:80%;
+    height:25%;
+    padding-bottom: 50px;
   }
   .upper-explain-title {
     font-size:20px;
@@ -314,7 +320,9 @@ a {
   }
   .main-content-right-middle{
     height:50%;
-    padding:0;
+    padding:0 0 50px;
+    width:80%;
+    margin: 0 auto;
   }
   .mypage-item-box {
     width:100%;
@@ -327,7 +335,8 @@ a {
   }
   .main-content-right-lower{
     height:20%;
-    width:100%;
+    width:80%;
+    padding-bottom: 50px;
   }
   .lower-explain-title {
     font-size:20px;
