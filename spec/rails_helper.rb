@@ -31,20 +31,20 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
-  #デフォルトのテストはjavascriptを使わない[rack_test]ドライバにする
+  # デフォルトのテストはjavascriptを使わない[rack_test]ドライバにする
   config.before(:each, type: :system) do
     driven_by :rack_test
   end
-  
-  #js:trueの時のテストは[selenium_chrome_headless]ドライバにする
+
+  # js:trueの時のテストは[selenium_chrome_headless]ドライバにする
   config.before(:each, type: :system, js: true) do
-      driven_by :selenium_chrome_headless, using: :chrome, options: {
-        browser: :remote,
-        url: ENV.fetch("SELENIUM_DRIVER_URL"),
-        desired_capabilities: :chrome
-      }
+    driven_by :selenium_chrome_headless, using: :chrome, options: {
+      browser: :remote,
+      url: ENV.fetch('SELENIUM_DRIVER_URL'),
+      desired_capabilities: :chrome
+    }
   end
-  
+
   config.include SignInSupport
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

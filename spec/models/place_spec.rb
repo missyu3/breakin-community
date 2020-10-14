@@ -7,16 +7,16 @@ RSpec.describe Place, type: :model do
   end
 
   describe '練習場所新規登録' do
-    context "練習場所の新規登録に成功する場合" do
+    context '練習場所の新規登録に成功する場合' do
       it 'nameとaddressとpriceが存在すれば登録できること' do
         expect(@place).to be_valid
       end
       it 'remarkが空でも登録できること' do
-        @place.remark = ""
+        @place.remark = ''
         expect(@place).to be_valid
       end
       it 'urlが空でも登録できること' do
-        @place.url = ""
+        @place.url = ''
         expect(@place).to be_valid
       end
       it 'imageが空でも登録できること' do
@@ -24,7 +24,7 @@ RSpec.describe Place, type: :model do
         expect(@place).to be_valid
       end
     end
-    context "練習場所の新規登録に失敗する場合" do
+    context '練習場所の新規登録に失敗する場合' do
       it 'nameが空だと登録できない' do
         @place.name = ''
         @place.valid?
@@ -91,7 +91,7 @@ RSpec.describe Place, type: :model do
         expect(@place.errors.full_messages).to include('画像の拡張子が間違っています')
       end
       it 'urlはhttpかhttpsを含んでいないと登録できないこと' do
-        @place.url = "www.hoge.com"
+        @place.url = 'www.hoge.com'
         @place.valid?
         expect(@place.errors.full_messages).to include('URLにはhttpまたはhttpsを含む必要があります')
       end

@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "Places", type: :system do
+RSpec.describe 'Places', type: :system do
   describe '練習場所新規登録' do
     before do
       @user = FactoryBot.create(:user)
     end
-    
+
     context '練習場所の新規登録ができるとき' do
       it '正しい情報を入力すれば練習場所の新規登録ができてトップページに移動する' do
         sign_in(@user)
@@ -13,15 +13,15 @@ RSpec.describe "Places", type: :system do
         fill_in 'place_name', with: '体育館'
         fill_in 'place_price', with: '１時間１００円かかります'
 
-        #googlemap上をクリックしたときの動作
+        # googlemap上をクリックしたときの動作
         fill_in 'place_address', with: '京都'
-        first('input#lat', visible: false).set("50")
-        first('input#lng', visible: false).set("100")
+        first('input#lat', visible: false).set('50')
+        first('input#lng', visible: false).set('100')
 
-        expect{
+        expect do
           find('input[name="commit"]').click
-        }.to change {Place.count}.by(1)
-        expect(current_path).to eq root_path 
+        end.to change {Place.count}.by(1)
+        expect(current_path).to eq root_path
       end
     end
     context '練習場所の新規登録ができないとき' do
@@ -30,9 +30,9 @@ RSpec.describe "Places", type: :system do
         visit new_place_path
         fill_in 'place_name', with: ''
         fill_in 'place_price', with: ''
-        expect{
+        expect  do
           find('input[name="commit"]').click
-        }.to change {Place.count}.by(0)
+        end.to change {Place.count}.by(0)
       end
       it 'googlemapをクリックせずに住所を手入力すると練習場所の新規登録ができない' do
         sign_in(@user)
@@ -40,9 +40,9 @@ RSpec.describe "Places", type: :system do
         fill_in 'place_name', with: '体育館'
         fill_in 'place_price', with: '１時間１００円かかります'
         fill_in 'place_address', with: '京都'
-        expect{
+        expect  do
           find('input[name="commit"]').click
-        }.to change {Place.count}.by(0)
+        end.to change {Place.count}.by(0)
       end
     end
   end
@@ -56,21 +56,21 @@ RSpec.describe "Places", type: :system do
       @another_place = FactoryBot.create(:place)
       @another_user_place = UserPlace.create(user_id: @another_user.id, place_id: @another_place.id)
     end
-    
+
     context '練習場所の編集ができるとき' do
       it '自分で登録した練習場所ならば練習場所の編集ができる' do
         sign_in(@user)
         visit user_path(@user)
-        expect(page).to have_content(@place.name)  
-        visit  new_place_message_path(@place)
-        expect(page).to have_content('編集')  
+        expect(page).to have_content(@place.name)
+        visit new_place_message_path(@place)
+        expect(page).to have_content('編集')
       end
     end
     context '練習場所の編集ができないとき' do
       it '他のユーザーが登録した練習場所ならば練習場所の編集はできない' do
         sign_in(@user)
-        visit  new_place_message_path(@another_place)
-        expect(page).to have_no_content('編集')  
+        visit new_place_message_path(@another_place)
+        expect(page).to have_no_content('編集')
       end
     end
   end
@@ -84,21 +84,21 @@ RSpec.describe "Places", type: :system do
       @another_place = FactoryBot.create(:place)
       @another_user_place = UserPlace.create(user_id: @another_user.id, place_id: @another_place.id)
     end
-    
+
     context '練習場所の削除ができるとき' do
       it '自分で登録した練習場所ならば練習場所の削除ができる' do
         sign_in(@user)
         visit user_path(@user)
-        expect(page).to have_content(@place.name)  
-        visit  new_place_message_path(@place)
-        expect(page).to have_content('削除')  
+        expect(page).to have_content(@place.name)
+        visit new_place_message_path(@place)
+        expect(page).to have_content('削除')
       end
     end
     context '練習場所の削除ができないとき' do
       it '他のユーザーが登録した練習場所ならば練習場所の削除はできない' do
         sign_in(@user)
-        visit  new_place_message_path(@another_place)
-        expect(page).to have_no_content('削除')  
+        visit new_place_message_path(@another_place)
+        expect(page).to have_no_content('削除')
       end
     end
   end

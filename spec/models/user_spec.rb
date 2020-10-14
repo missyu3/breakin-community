@@ -8,11 +8,11 @@ RSpec.describe User, type: :model do
 
   describe 'ユーザー新規登録' do
     before do
-      #ユーザー新規登録では設定しないため除外
-      @user.remark = ""
+      # ユーザー新規登録では設定しないため除外
+      @user.remark = ''
       @user.image = nil
     end
-    context "ユーザーの新規登録に成功する場合" do
+    context 'ユーザーの新規登録に成功する場合' do
       it 'nicknameとemail、passwordとpassword_confirmationとdance_level_id存在すれば登録できること' do
         expect(@user).to be_valid
       end
@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
         expect(@user).to be_valid
       end
     end
-    context "ユーザーの新規登録に失敗する場合" do
+    context 'ユーザーの新規登録に失敗する場合' do
       it 'nicknameが空では登録できないこと' do
         @user.nickname = ''
         @user.valid?
@@ -75,13 +75,13 @@ RSpec.describe User, type: :model do
       it 'dance_level_idが【ダンス歴未設定】だと登録できないこと' do
         @user.dance_level_id = 1
         @user.valid?
-        expect(@user.errors.full_messages).to  include('ダンス歴は【ダンス歴未設定】以外の値にしてください')
+        expect(@user.errors.full_messages).to include('ダンス歴は【ダンス歴未設定】以外の値にしてください')
       end
     end
   end
 
   describe 'ユーザー編集' do
-    context "ユーザーの編集に成功する場合" do
+    context 'ユーザーの編集に成功する場合' do
       it 'remarkが空でも登録できること' do
         @user.remark = nil
         expect(@user).to be_valid
@@ -91,7 +91,7 @@ RSpec.describe User, type: :model do
         expect(@user).to be_valid
       end
     end
-    context "ユーザーの編集に失敗する場合" do
+    context 'ユーザーの編集に失敗する場合' do
       it 'remarkは201文字以上では登録できないこと' do
         @user.remark = 'a' * 201
         @user.valid?

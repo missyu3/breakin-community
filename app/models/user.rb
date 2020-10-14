@@ -14,11 +14,12 @@ class User < ApplicationRecord
   # was_attachedの時、ユーザー画像の拡張子を制限する
   def image_content_type
     extension = ['image/png', 'image/jpg', 'image/jpeg', 'image/gif', 'image/bmp']
-    errors.add(:image, "の拡張子が間違っています") unless image.content_type.in?(extension)
+    errors.add(:image, 'の拡張子が間違っています') unless image.content_type.in?(extension)
   end
+
   # ユーザー画像が添付される時
   def was_attached?
-    self.image.attached?
+    image.attached?
   end
 
   has_many :active_relationships, class_name: 'Relationship', foreign_key: :following_id
@@ -29,11 +30,11 @@ class User < ApplicationRecord
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates :password, format: { with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください' }, allow_blank: true
 
-  validates :remark, length: { maximum: 200 } #自己紹介は200文字以内とする
+  validates :remark, length: { maximum: 200 } # 自己紹介は200文字以内とする
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :dance_level
-  validates :dance_level_id, numericality: { other_than: 1 } #ダンスレベルカテゴリーを選択しないと登録できない
+  validates :dance_level_id, numericality: { other_than: 1 } # ダンスレベルカテゴリーを選択しないと登録できない
 
   def self.guest
     find_or_create_by!(email: 'guestlogin@example.com') do |user|
