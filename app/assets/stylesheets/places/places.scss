@@ -74,7 +74,6 @@ header {
   font-weight: bold;
   text-align:center;
   position:relative;
-
 }
 
 .header-list > a {
@@ -155,7 +154,7 @@ footer {
   }
   .header-title {
     font-size: 25px;
-   }
+  }
   .header-container {
     width:40%;
   }
@@ -168,17 +167,17 @@ footer {
 }
 
 @media (max-width: 599px) {
- .header-title {
+  .header-title {
     font-size: 15px;
     top:30%;
-  } 
- .header-logo {
+  }
+  .header-logo {
     width:40%;
- }
- .header-container {
+  }
+  .header-container {
     width: 60%;
   }
- .header-container-contents {
+  .header-container-contents {
     display: inline-block;
     width: 100%;
   }

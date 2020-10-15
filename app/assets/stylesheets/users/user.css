@@ -144,15 +144,21 @@
   .account-page .field .field-submit .btn {
     letter-spacing: 3px;
   }
+  .edit-image-form {
+    width: 100%;
+  }
+  .account-page .account-page__inner .account-page__inner--left, .account-page .account-page__inner .account-page__inner--right {
+    width:100%;
+  }
+  .btn {
+    width: 50%;
+  }
 }
 @media (max-width: 599px) {
   .account-page .account-page__inner {
     width:100%;
     margin:0;
     padding:10px;
-  }
-  .account-page .account-page__inner .account-page__inner--left, .account-page .account-page__inner .account-page__inner--right {
-    width:100%;
   }
   .account-page .account-page__header h2 {
     text-align:center;

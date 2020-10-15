@@ -32,7 +32,11 @@
       <%= @user.dance_level.name %>
     </div>
     <div class= "user-remark">
-      <%= @user.remark %>
+      <% if @user.remark.blank? %>
+        自己紹介は記入していません
+      <% else %>
+        <%= @user.remark %>
+      <% end %>
     </div>
     <% if user_signed_in? %>
       <% if current_user.id == @user.id  %>

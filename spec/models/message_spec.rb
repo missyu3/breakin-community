@@ -6,12 +6,12 @@ RSpec.describe Message, type: :model do
   end
 
   describe 'メッセージ新規投稿' do
-    context "メッセージの投稿に成功する場合" do
+    context 'メッセージの投稿に成功する場合' do
       it 'textがあれば投稿に成功する' do
-      expect(@message).to be_valid
+        expect(@message).to be_valid
       end
     end
-    context "メッセージの投稿に失敗する場合" do
+    context 'メッセージの投稿に失敗する場合' do
       it 'textが空だと投稿できない' do
         @message.text = ''
         @message.valid?
